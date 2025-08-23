@@ -1,0 +1,8 @@
+BasedOnStyle: LLVM        # можно взять любой стиль: LLVM, Google, Chromium, Microsoft
+IndentWidth: 4            # ширина отступа
+ColumnLimit: 0            # отключаем перенос строк по длине
+
+# --- самое важное для массивов ---
+AlignArrayOfStructures: Left   # выравнивание по левому краю
+BinPackArguments: false        # не складывать аргументы в одну строку
+BinPackParameters: false
