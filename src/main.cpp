@@ -3,6 +3,9 @@
 
 #include <iostream>
 
+#include "Renderer/ShaderProgram.h"
+#include "Tools/Tools.h"
+
 int windowWidth = 800;
 int windowHeight = 600;
 
@@ -82,36 +85,10 @@ int main(void)
 	std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 	std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
 
-	GLuint vs = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vs, 1, &vertShader, nullptr);
-	glCompileShader(vs);
+	std::string vertexShader(vertShader);
+	std::string fragmnentShader(fragShader);
 
-	GLint success;
-	glGetShaderiv(vs, GL_COMPILE_STATUS, &success);
-	if (!success) {
-		char log[512];
-		glGetShaderInfoLog(vs, 512, nullptr, log);
-		std::cerr << "Vertex shader error:\n" << log << std::endl;
-	}
-
-	GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fs, 1, &fragShader, nullptr);
-	glCompileShader(fs);
-
-	glGetShaderiv(vs, GL_COMPILE_STATUS, &success);
-	if (!success) {
-		char log[512];
-		glGetShaderInfoLog(fs, 512, nullptr, log);
-		std::cerr << "Vertex shader error:\n" << log << std::endl;
-	}
-
-	GLuint program = glCreateProgram();
-	glAttachShader(program, vs);
-	glAttachShader(program, fs);
-	glLinkProgram(program);
-
-	glDeleteShader(vs);
-	glDeleteShader(fs);
+	Renderer::ShaderProgram shader(vertexShader, fragmnentShader);
 
 	GLuint vbo = 0;
 	glGenBuffers(1, &vbo);
@@ -126,19 +103,19 @@ int main(void)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)0);
 
 	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT)));
+	glcall(glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT))));
 	
-	glClearColor(0.0f, 0.2f, 0.2f, 1.0f);
+	glcall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 	while (!glfwWindowShouldClose(window))
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
+		glcall(glClear(GL_COLOR_BUFFER_BIT));
 
-		glUseProgram(program);
-		glBindVertexArray(vao);
+		shader.Use();
+		glcall(glBindVertexArray(vao));
 
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glcall(glDrawArrays(GL_TRIANGLES, 0, 3));
 
-		glBindVertexArray(0);
+		glcall(glBindVertexArray(0));
 
 		glfwSwapBuffers(window);
 
