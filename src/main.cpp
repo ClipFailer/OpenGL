@@ -5,6 +5,7 @@
 
 #include "Renderer/ShaderProgram.h"
 #include "Tools/Tools.h"
+#include "Resources/ResourceManager.h"
 
 int windowWidth = 800;
 int windowHeight = 600;
@@ -15,24 +16,6 @@ GLfloat points[]
 	0.0f, 0.5f, 0.0f,		0.0f, 1.0f, 0.0f,
 	0.5f, -0.5f, 0.0f,		0.0f, 0.0f, 1.0f,
 };
-
-const char* vertShader = 
-"#version 460 core\n"
-"layout(location = 0) in vec3 vertexPos;\n"
-"layout(location = 1) in vec3 vertexCol;\n"
-"out vec3 color;\n"
-"void main() {\n"
-"    color = vertexCol;\n"
-"    gl_Position = vec4(vertexPos, 1.0f);\n"
-"}\n";
-
-const char* fragShader = 
-"#version 460 core\n"
-"in vec3 color;\n"
-"out vec4 fragColor;\n"
-"void main() {\n"
-"    fragColor = vec4(color, 1.0f);\n"
-"}\n";
 
 void changeWindowSizeCallback(GLFWwindow *window, int width, int height)
 {
@@ -50,8 +33,10 @@ void keyHandlerCallback(GLFWwindow *window, int key, int scancode, int action, i
 	}
 }
 
-int main(void)
+int main(int argc, char** argv)
 {
+	
+
 	if (!glfwInit())
 	{
 		std::cout << "Failed to initialized GLFW\n";
@@ -82,44 +67,48 @@ int main(void)
 		return -1;
 	}
 
-	std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
-	std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
-
-	std::string vertexShader(vertShader);
-	std::string fragmnentShader(fragShader);
-
-	Renderer::ShaderProgram shader(vertexShader, fragmnentShader);
-
-	GLuint vbo = 0;
-	glGenBuffers(1, &vbo);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
-
-	GLuint vao = 0;
-	glGenVertexArrays(1, &vao);
-	glBindVertexArray(vao);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)0);
-
-	glEnableVertexAttribArray(1);
-	glcall(glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT))));
-	
-	glcall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
-	while (!glfwWindowShouldClose(window))
 	{
-		glcall(glClear(GL_COLOR_BUFFER_BIT));
+		ResourceManager resourceManager(argv[0]);
+		auto pDefaultShaderProgram = resourceManager.LoadShaders("DefaulShader", "res/shaders/vertex.glsl", "res/shaders/fragment.glsl");
+		if (!pDefaultShaderProgram)
+		{
+			ASSERT(false);
+		}
 
-		shader.Use();
-		glcall(glBindVertexArray(vao));
+		std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
+		std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
 
-		glcall(glDrawArrays(GL_TRIANGLES, 0, 3));
+		GLuint vbo = 0;
+		glGenBuffers(1, &vbo);
+		glBindBuffer(GL_ARRAY_BUFFER, vbo);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
 
-		glcall(glBindVertexArray(0));
+		GLuint vao = 0;
+		glGenVertexArrays(1, &vao);
+		glBindVertexArray(vao);
 
-		glfwSwapBuffers(window);
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)0);
 
-		glfwPollEvents();
+		glEnableVertexAttribArray(1);
+		glcall(glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT))));
+		
+		glcall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
+		while (!glfwWindowShouldClose(window))
+		{
+			glcall(glClear(GL_COLOR_BUFFER_BIT));
+
+			pDefaultShaderProgram->Use();
+			glcall(glBindVertexArray(vao));
+
+			glcall(glDrawArrays(GL_TRIANGLES, 0, 3));
+
+			glcall(glBindVertexArray(0));
+
+			glfwSwapBuffers(window);
+
+			glfwPollEvents();
+		}
 	}
 
 	glfwTerminate();

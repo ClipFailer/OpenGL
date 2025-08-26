@@ -33,7 +33,7 @@ Renderer::ShaderProgram::ShaderProgram(const std::string &vertexShader,
 	if(!success)
 	{
 		GLchar infoLog[1024];
-		glGetShaderInfoLog(m_ID, 1024, nullptr, infoLog);
+		glGetProgramInfoLog(m_ID, 1024, nullptr, infoLog);
 		std::cerr << "SHADER ERROR. link-time error: " << infoLog << std::endl;
 		glDeleteShader(vertexShaderID);
 		glDeleteShader(fragmentShaderID);
