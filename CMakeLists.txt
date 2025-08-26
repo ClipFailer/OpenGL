@@ -10,6 +10,7 @@ add_executable(${PROJECT_NAME}
 	src/Tools/Tools.h
 	src/Resources/ResourceManager.cpp
 	src/Resources/ResourceManager.h
+	src/Resources/stb_image.h
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE src)

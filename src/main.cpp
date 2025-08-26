@@ -71,9 +71,10 @@ int main(int argc, char** argv)
 		ResourceManager resourceManager(argv[0]);
 		auto pDefaultShaderProgram = resourceManager.LoadShaders("DefaulShader", "res/shaders/vertex.glsl", "res/shaders/fragment.glsl");
 		if (!pDefaultShaderProgram)
-		{
 			ASSERT(false);
-		}
+
+		if (!resourceManager.loadTexture("DefaultTexture", "res/textures/map_16x16.png"))
+			ASSERT(false);
 
 		std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 		std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
