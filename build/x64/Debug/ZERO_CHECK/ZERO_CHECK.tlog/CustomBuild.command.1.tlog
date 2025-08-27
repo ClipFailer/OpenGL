@@ -1,0 +1,10 @@
+^C:\PROJECTS\CPP\OGL\LEARNING\BUILD\CMAKEFILES\4F7C58649099301F5F85D700A7FBCA75\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Projects/cpp/ogl/learning -BC:/Projects/cpp/ogl/learning/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Projects/cpp/ogl/learning/build/OpenGLLearning.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

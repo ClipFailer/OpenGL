@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Projects/cpp/ogl/learning/build/cmake_install.cmake",
+		"C:/Projects/cpp/ogl/learning/build/external/glfw/cmake_install.cmake",
+		"C:/Projects/cpp/ogl/learning/build/external/glfw/src/cmake_install.cmake",
+		"C:/Projects/cpp/ogl/learning/build/external/glfw/docs/cmake_install.cmake",
+		"C:/Projects/cpp/ogl/learning/build/external/glad/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

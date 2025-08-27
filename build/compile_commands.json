@@ -1,0 +1,158 @@
+[
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\main.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\main.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/main.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\ShaderProgram.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\ShaderProgram.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/ShaderProgram.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\Texture2D.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\Texture2D.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/Texture2D.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\Resources\\ResourceManager.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Resources\\ResourceManager.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\context.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\context.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/context.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/context.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\init.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\init.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/init.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/init.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\input.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\input.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/input.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/input.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\monitor.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\monitor.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/monitor.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\platform.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\platform.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/platform.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/platform.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\vulkan.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\vulkan.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/vulkan.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\window.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\window.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/window.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/window.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\egl_context.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\egl_context.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/egl_context.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\osmesa_context.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\osmesa_context.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/osmesa_context.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_init.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\null_init.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/null_init.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_monitor.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\null_monitor.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/null_monitor.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_window.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\null_window.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/null_window.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\null_joystick.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\null_joystick.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/null_joystick.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_module.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_module.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_module.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_time.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_time.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_time.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_thread.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_thread.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_thread.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_init.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_init.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_init.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_joystick.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_joystick.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_joystick.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_monitor.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_monitor.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_monitor.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\win32_window.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\win32_window.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/win32_window.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\wgl_context.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\wgl_context.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/wgl_context.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o external\\glad\\CMakeFiles\\glad.dir\\src\\gl.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glad\\src\\gl.c",
+  "file": "C:/Projects/cpp/ogl/learning/external/glad/src/gl.c",
+  "output": "C:/Projects/cpp/ogl/learning/build/external/glad/CMakeFiles/glad.dir/src/gl.c.obj"
+}
+]
