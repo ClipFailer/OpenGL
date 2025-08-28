@@ -1,25 +1,25 @@
 [
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\main.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\main.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\main.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\main.cpp",
   "file": "C:/Projects/cpp/ogl/learning/src/main.cpp",
   "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj"
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\ShaderProgram.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\ShaderProgram.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\ShaderProgram.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\ShaderProgram.cpp",
   "file": "C:/Projects/cpp/ogl/learning/src/Renderer/ShaderProgram.cpp",
   "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj"
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\Texture2D.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\Texture2D.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\Texture2D.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\Texture2D.cpp",
   "file": "C:/Projects/cpp/ogl/learning/src/Renderer/Texture2D.cpp",
   "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj"
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -o CMakeFiles\\OpenGLLearning.dir\\src\\Resources\\ResourceManager.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Resources\\ResourceManager.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Resources\\ResourceManager.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Resources\\ResourceManager.cpp",
   "file": "C:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp",
   "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj"
 },

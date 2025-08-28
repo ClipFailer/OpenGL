@@ -1,27 +1,36 @@
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
+#include <glm/vec2.hpp>
 
 #include <iostream>
 
 #include "Renderer/ShaderProgram.h"
+#include "Renderer/Texture2D.h"
 #include "Tools/Tools.h"
 #include "Resources/ResourceManager.h"
 
-int windowWidth = 800;
-int windowHeight = 600;
+glm::ivec2 windowSize(800, 600);
 
 GLfloat points[]
 {
-	-0.5f, -0.5f, 0.0f,		1.0f, 0.0f, 0.0f,
-	0.0f, 0.5f, 0.0f,		0.0f, 1.0f, 0.0f,
-	0.5f, -0.5f, 0.0f,		0.0f, 0.0f, 1.0f,
+	// Вершины				// Цвета 				// Текстура
+	-0.5f, 0.0f, 0.0f,		1.0f, 0.0f, 0.0f,		0.0f, 0.0f, 
+	-0.5f, 0.5f, 0.0f,		0.0f, 1.0f, 0.0f,		0.0f, 1.0f,
+	0.5f, 0.5f, 0.0f,		0.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+	0.5f, 0.0f, 0.0f,       0.0f, 0.0f, 1.0f,		1.0f, 0.0f,
+};
+
+GLuint indeces[]
+{
+	0, 1, 2,
+	2, 3, 0,
 };
 
 void changeWindowSizeCallback(GLFWwindow *window, int width, int height)
 {
-	windowWidth = width;
-	windowHeight = height;
-	glViewport(0, 0, windowWidth, windowHeight);
+	windowSize.x = width;
+	windowSize.y = height;
+	glViewport(0, 0, windowSize.x, windowSize.y);
 }
 
 void keyHandlerCallback(GLFWwindow *window, int key, int scancode, int action, int mode)
@@ -35,8 +44,6 @@ void keyHandlerCallback(GLFWwindow *window, int key, int scancode, int action, i
 
 int main(int argc, char** argv)
 {
-	
-
 	if (!glfwInit())
 	{
 		std::cout << "Failed to initialized GLFW\n";
@@ -73,26 +80,49 @@ int main(int argc, char** argv)
 		if (!pDefaultShaderProgram)
 			ASSERT(false);
 
-		if (!resourceManager.loadTexture("DefaultTexture", "res/textures/map_16x16.png"))
+		auto texture = resourceManager.loadTexture("DefaultTexture", "res/textures/map_16x16.png");	
+		if (!texture)
 			ASSERT(false);
 
 		std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 		std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+
+		GLuint vao = 0;
+		glGenVertexArrays(1, &vao);
+		glBindVertexArray(vao);
 
 		GLuint vbo = 0;
 		glGenBuffers(1, &vbo);
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
 
-		GLuint vao = 0;
-		glGenVertexArrays(1, &vao);
-		glBindVertexArray(vao);
+		GLuint ibo = 0;
+		glGenBuffers(1, &ibo);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indeces), indeces, GL_STATIC_DRAW);
 
+		// Вершины
 		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)0);
+		glVertexAttribPointer(0, 3, 
+							  GL_FLOAT, GL_FALSE, 
+							  8 * sizeof(GL_FLOAT), (void*)0);
 
+		// Цвета
 		glEnableVertexAttribArray(1);
-		glcall(glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT))));
+		glcall(glVertexAttribPointer(1, 3, 
+									 GL_FLOAT, GL_FALSE, 
+									 8 * sizeof(GL_FLOAT), (void*)(3 * sizeof(GL_FLOAT))));
+
+		// Текстуры
+		glEnableVertexAttribArray(2);
+		glcall(glVertexAttribPointer(2, 2, 
+									 GL_FLOAT, GL_FALSE, 
+									 8 * sizeof(GL_FLOAT), (void*)(6 * sizeof(GL_FLOAT))));
+
+		glBindVertexArray(0);
+
+		pDefaultShaderProgram->Use();
+		pDefaultShaderProgram->SetInt("tex", 0);
 		
 		glcall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 		while (!glfwWindowShouldClose(window))
@@ -101,8 +131,9 @@ int main(int argc, char** argv)
 
 			pDefaultShaderProgram->Use();
 			glcall(glBindVertexArray(vao));
+			texture->Bind();
 
-			glcall(glDrawArrays(GL_TRIANGLES, 0, 3));
+			glcall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0));
 
 			glcall(glBindVertexArray(0));
 

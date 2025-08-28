@@ -93,3 +93,8 @@ bool Renderer::ShaderProgram::CreateShader(const std::string &source, const GLen
 void Renderer::ShaderProgram::Use() {
 	glUseProgram(m_ID);
 }
+
+void Renderer::ShaderProgram::SetInt(const std::string &name, const GLint value) 
+{
+	glUniform1i(glGetUniformLocation(m_ID, name.c_str()), value);
+}

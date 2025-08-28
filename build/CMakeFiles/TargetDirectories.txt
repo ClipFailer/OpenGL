@@ -1,4 +1,5 @@
 C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir
+C:/Projects/cpp/ogl/learning/build/CMakeFiles/copy_res.dir
 C:/Projects/cpp/ogl/learning/build/CMakeFiles/edit_cache.dir
 C:/Projects/cpp/ogl/learning/build/CMakeFiles/rebuild_cache.dir
 C:/Projects/cpp/ogl/learning/build/CMakeFiles/list_install_components.dir

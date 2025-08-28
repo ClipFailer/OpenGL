@@ -52,32 +52,32 @@ build cmake_object_order_depends_target_OpenGLLearning: phony || cmake_object_or
 build CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/main.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\main.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src
 
 build CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/ShaderProgram.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\ShaderProgram.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
 build CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/Texture2D.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\Texture2D.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
 build CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Resources\ResourceManager.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Resources
 
@@ -94,11 +94,17 @@ build bin/OpenGLLearning.exe: CXX_EXECUTABLE_LINKER__OpenGLLearning_Debug CMakeF
   FLAGS = -g
   LINK_LIBRARIES = external/glfw/src/libglfw3.a  external/glad/libglad.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
-  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Projects\cpp\ogl\learning\build && "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Projects/cpp/ogl/learning/res C:/Projects/cpp/ogl/learning/build/bin/res"
+  POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_FILE = bin\OpenGLLearning.exe
   TARGET_IMPLIB = libOpenGLLearning.dll.a
   TARGET_PDB = OpenGLLearning.exe.dbg
+
+
+#############################################
+# Utility command for copy_res
+
+build copy_res: phony CMakeFiles/copy_res bin/OpenGLLearning.exe
 
 
 #############################################
@@ -165,6 +171,13 @@ build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
   restat = 1
 
 build install/strip: phony CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for CMakeFiles\copy_res
+
+build CMakeFiles/copy_res | ${cmake_ninja_workdir}CMakeFiles/copy_res: CUSTOM_COMMAND || bin/OpenGLLearning.exe external/glad/libglad.a external/glfw/src/libglfw3.a
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Projects\cpp\ogl\learning\build && "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Projects/cpp/ogl/learning/res C:/Projects/cpp/ogl/learning/build/bin/res"
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -753,42 +766,7 @@ build update_mappings: phony external/glfw/src/update_mappings
 #############################################
 # Folder: C:/Projects/cpp/ogl/learning/build
 
-build codegen: phony external/glfw/codegen external/glad/codegen
-
-# =============================================================================
-
-#############################################
-# Folder: C:/Projects/cpp/ogl/learning/build/external/glad
-
-build external/glad/codegen: phony
-
-# =============================================================================
-
-#############################################
-# Folder: C:/Projects/cpp/ogl/learning/build/external/glfw
-
-build external/glfw/codegen: phony external/glfw/src/codegen external/glfw/docs/codegen
-
-# =============================================================================
-
-#############################################
-# Folder: C:/Projects/cpp/ogl/learning/build/external/glfw/docs
-
-build external/glfw/docs/codegen: phony
-
-# =============================================================================
-
-#############################################
-# Folder: C:/Projects/cpp/ogl/learning/build/external/glfw/src
-
-build external/glfw/src/codegen: phony
-
-# =============================================================================
-
-#############################################
-# Folder: C:/Projects/cpp/ogl/learning/build
-
-build all: phony bin/OpenGLLearning.exe external/glfw/all external/glad/all
+build all: phony bin/OpenGLLearning.exe copy_res external/glfw/all external/glad/all
 
 # =============================================================================
 
