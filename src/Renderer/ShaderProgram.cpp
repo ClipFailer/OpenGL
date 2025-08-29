@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "Tools/Tools.h"
+#include <glm/gtc/type_ptr.hpp>
 
 Renderer::ShaderProgram::ShaderProgram(const std::string &vertexShader, 
 									  const std::string &fragmentShader) 
@@ -97,4 +98,12 @@ void Renderer::ShaderProgram::Use() {
 void Renderer::ShaderProgram::SetInt(const std::string &name, const GLint value) 
 {
 	glUniform1i(glGetUniformLocation(m_ID, name.c_str()), value);
+}
+
+void Renderer::ShaderProgram::SetMat4(const std::string &name, const glm::mat4 matrix) {
+	glUniformMatrix4fv(glGetUniformLocation(m_ID, 
+											name.c_str()), 
+											1, 
+											GL_FALSE, 
+											glm::value_ptr(matrix));
 }
