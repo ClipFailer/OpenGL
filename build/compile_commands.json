@@ -19,6 +19,12 @@
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\Sprite.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\Sprite.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/Sprite.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Resources\\ResourceManager.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Resources\\ResourceManager.cpp",
   "file": "C:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp",
   "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj"

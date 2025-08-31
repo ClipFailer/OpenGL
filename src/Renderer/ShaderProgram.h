@@ -8,7 +8,9 @@
 namespace Renderer {
 	class ShaderProgram {
 	public:
-		ShaderProgram(const std::string& vertexShader, const std::string& fragmentShader);
+		ShaderProgram(const std::string& name, 
+					  const std::string& vertexShader, 
+					  const std::string& fragmentShader);
 		~ShaderProgram();
 
 		ShaderProgram() = delete;
@@ -22,10 +24,12 @@ namespace Renderer {
 		bool IsCompiled() { return m_isCompiled; }
 		void Use();
 		void SetInt(const std::string& name, const GLint value);
-		void SetMat4(const std::string& name, const glm::mat4 matrix);
+		void SetMat4(const std::string& name, const glm::mat4 &matrix);
+		std::string GetName() const;
 
 	private:
 		bool m_isCompiled = false;
 		GLuint m_ID = 0;
+		std::string m_name;
 	};
 }

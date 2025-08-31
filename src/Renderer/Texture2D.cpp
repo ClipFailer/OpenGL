@@ -1,10 +1,10 @@
 #include "Texture2D.h"
 
 namespace Renderer {
-	Texture2D::Texture2D(const GLuint width, const GLuint height, 
+	Texture2D::Texture2D(const std::string& name, const GLuint width, const GLuint height, 
 						 unsigned char *data, const unsigned int channels, 
 						 const GLenum filter, const GLenum wrapMode)
-						: m_width(width), m_height(height)
+						: m_name(name), m_width(width), m_height(height)
 	{
 		switch (channels)
 		{
@@ -70,4 +70,8 @@ namespace Renderer {
 	{
 		glBindTexture(GL_TEXTURE_2D, m_ID);
 	}
-}
+    std::string Texture2D::GetName() const 
+	{
+        return m_name;
+    }
+} // namespace Renderer
