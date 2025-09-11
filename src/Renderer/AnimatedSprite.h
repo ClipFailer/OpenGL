@@ -11,9 +11,9 @@ namespace Renderer {
 	class Texture2D;
 	class ShaderProgram;
 
-	class Sprite {
+	class AnimatedSprite {
 	public:
-		Sprite(const std::string &name,
+		AnimatedSprite(const std::string &name,
 			   const std::shared_ptr<Texture2D> pTexture,
 			   const std::string &initialSubTexture,
 			   const std::shared_ptr<ShaderProgram> pShaderProgram,
@@ -21,10 +21,10 @@ namespace Renderer {
 			   const glm::vec2& size = glm::vec2(1.f),
 			   const float rotation = 0.f);
 		
-		~Sprite();
+		~AnimatedSprite();
 
-		Sprite(const Sprite&) = delete;
-		Sprite& operator=(const Sprite&) = delete;
+		AnimatedSprite(const AnimatedSprite&) = delete;
+		AnimatedSprite& operator=(const AnimatedSprite&) = delete;
 
 		void Render() const;
 		void SetPosition(const glm::vec2& newPosition);

@@ -65,11 +65,15 @@ int main(int argc, char** argv)
 
 	{
 		ResourceManager resourceManager(argv[0]);
-		auto pDefaultShaderProgram = resourceManager.LoadShaders("DefaulShader", "res/shaders/vertex.glsl", "res/shaders/fragment.glsl");
+		auto pDefaultShaderProgram = resourceManager.LoadShaders("DefaulShader", 
+																 "res/shaders/vertex.glsl", 
+																 "res/shaders/fragment.glsl");
 		if (!pDefaultShaderProgram)
 			ASSERT(false);
 
-		auto pSpriteShaderProgram = resourceManager.LoadShaders("SpriteShader", "res/shaders/vSprite.glsl", "res/shaders/fSprite.glsl");
+		auto pSpriteShaderProgram = resourceManager.LoadShaders("SpriteShader", 
+																"res/shaders/vSprite.glsl", 
+																"res/shaders/fSprite.glsl");
 		if (!pSpriteShaderProgram)
 			ASSERT(false);
 
@@ -77,12 +81,23 @@ int main(int argc, char** argv)
 		if (!texture)
 			ASSERT(false);
 
-		auto sprite = resourceManager.LoadSprite("defaultSprite", texture->GetName(),
-												 pSpriteShaderProgram->GetName(), 200, 100);
+		std::vector<std::string> subTexturesNames = {	"block", "topBlock", 
+														"bottomBlock", "leftBlock", 
+														"rightBlock", "topLeftBlock", 
+														"topRightBlock", "bottomRightBlock", 
+														"bottomLeftBlock", "bottomRightBlock" 	};
+
+		auto pTextureAtlas = resourceManager.LoadTextureAtlas("defaultTextureAtlas", 
+															  "res/textures/map_16x16.png",
+															  std::move(subTexturesNames), 
+															  16, 16);
+
+		auto sprite = resourceManager.LoadSprite("defaultSprite", pTextureAtlas->GetName(),
+												 pSpriteShaderProgram->GetName(), 256, 256, "block");
 		if (!sprite)
 			ASSERT(false);
 
-		sprite->SetPosition(glm::vec2(300, 300));
+		sprite->SetPosition(glm::vec2(200, 200));
 
 		std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 		std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;

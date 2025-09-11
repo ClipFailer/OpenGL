@@ -1,10 +1,15 @@
 #include "Texture2D.h"
 
+#include <iostream>
+
 namespace Renderer {
-	Texture2D::Texture2D(const std::string& name, const GLuint width, const GLuint height, 
-						 unsigned char *data, const unsigned int channels, 
-						 const GLenum filter, const GLenum wrapMode)
-						: m_name(name), m_width(width), m_height(height)
+	Texture2D::Texture2D(const std::string& name, 
+						 const GLuint width, const GLuint height, 
+						 unsigned char *data, 
+						 const unsigned int channels, 
+						 const GLenum filter, 
+						 const GLenum wrapMode)
+					: m_name(name), m_width(width), m_height(height)
 	{
 		switch (channels)
 		{
@@ -70,8 +75,42 @@ namespace Renderer {
 	{
 		glBindTexture(GL_TEXTURE_2D, m_ID);
 	}
+
     std::string Texture2D::GetName() const 
 	{
         return m_name;
     }
+
+    void Texture2D::AddSubTexture(std::string name, 
+								  const glm::vec2 &rightBottomUV, 
+								  const glm::vec2 &leftTopUV) 
+	{
+		m_subtexturesMap.emplace(std::move(name), SubTexture2D(rightBottomUV, leftTopUV));
+    }
+
+    const Texture2D::SubTexture2D& Texture2D::GetSubTexture(const std::string &name) const
+	{
+        auto it = m_subtexturesMap.find(name);
+
+		if (it != m_subtexturesMap.end())
+		{
+			return it->second;
+		}
+
+		std::cerr << "Can't find subtexture: " << name << std::endl;
+		
+		const static SubTexture2D defaultSubTexture;
+		return defaultSubTexture;
+    }
+
+    unsigned int Texture2D::GetWidth() const 
+	{
+        return m_width;
+    }
+
+    unsigned int Texture2D::GetHeight() const 
+	{
+        return m_height;
+    }
+
 } // namespace Renderer
