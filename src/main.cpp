@@ -10,7 +10,10 @@
 #include "Renderer/ShaderProgram.h"
 #include "Renderer/Texture2D.h"
 #include "Renderer/Sprite.h"
+#include "Renderer/AnimatedSprite.h"
+
 #include "Tools/Tools.h"
+
 #include "Resources/ResourceManager.h"
 
 glm::ivec2 windowSize(800, 600);
@@ -77,27 +80,51 @@ int main(int argc, char** argv)
 		if (!pSpriteShaderProgram)
 			ASSERT(false);
 
-		auto texture = resourceManager.loadTexture("DefaultTexture", "res/textures/map_16x16.png");	
-		if (!texture)
+		auto pTexture = resourceManager.LoadTexture("DefaultTexture", "res/textures/map_16x16.png");	
+		if (!pTexture)
 			ASSERT(false);
 
 		std::vector<std::string> subTexturesNames = {	"block", "topBlock", 
 														"bottomBlock", "leftBlock", 
 														"rightBlock", "topLeftBlock", 
 														"topRightBlock", "bottomRightBlock", 
-														"bottomLeftBlock", "bottomRightBlock" 	};
+														"bottomLeftBlock",	
+
+														"beton", "topBeton",
+														"bottomBeton","leftBeton", "rightBeton",
+														"topLeftBeton", "topRightBeton",
+														"bottomLeftBeton", "bottomRightBeton",
+
+														"water1", "water2", "water3",
+														"trees", "ice", "wall",
+														"eagle", "deadEagle",
+														"nothing",
+														"respawn1", "respawn2", "respawn3", "respawn4" };
 
 		auto pTextureAtlas = resourceManager.LoadTextureAtlas("defaultTextureAtlas", 
 															  "res/textures/map_16x16.png",
-															  std::move(subTexturesNames), 
+															  std::move(subTexturesNames), 	
 															  16, 16);
 
-		auto sprite = resourceManager.LoadSprite("defaultSprite", pTextureAtlas->GetName(),
-												 pSpriteShaderProgram->GetName(), 256, 256, "block");
-		if (!sprite)
+		auto pSprite = resourceManager.LoadSprite("defaultSprite", pTextureAtlas->GetName(),
+												 pSpriteShaderProgram->GetName(), 100, 100, "block");
+		if (!pSprite)
 			ASSERT(false);
 
-		sprite->SetPosition(glm::vec2(200, 200));
+		pSprite->SetPosition(glm::vec2(200, 200));
+
+		auto pAnimatedSprite = resourceManager.LoadAnimatedSprite("defaultAnimatedSprite", pTextureAtlas->GetName(),
+																  pSpriteShaderProgram->GetName(), 100, 100, "water1");
+		if (!pAnimatedSprite)
+		ASSERT(false);
+
+		pAnimatedSprite->SetPosition(glm::vec2(400, 200));
+		std::vector<std::pair<std::string, float>> waterState;
+		waterState.emplace_back("water2", 0.5f);
+		waterState.emplace_back("water3", 0.5f);
+
+		pAnimatedSprite->InsertState("waterState", std::move(waterState));
+		pAnimatedSprite->SetState("waterState");
 
 		std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
 		std::cout << "OpenGL version: " << glGetString(GL_VERSION) << std::endl;
@@ -113,11 +140,20 @@ int main(int argc, char** argv)
 		pSpriteShaderProgram->SetMat4("projectionMat", projectionMatrix);
 
 		glcall(glClearColor(0.0f, 0.1f, 0.2f, 1.0f));
+
+		double lastLite = glfwGetTime();
 		while (!glfwWindowShouldClose(window))
 		{
+			double currentTime = glfwGetTime();
+			float deltaTime = static_cast<float>(currentTime - lastLite);
+			lastLite = currentTime;
+
+			pAnimatedSprite->Update(deltaTime);
+
 			glcall(glClear(GL_COLOR_BUFFER_BIT));
 
-			sprite->Render();
+			pSprite->Render();
+			pAnimatedSprite->Render();
 
 			glfwSwapBuffers(window);
 

@@ -9,6 +9,7 @@ namespace Renderer {
 	class ShaderProgram;
 	class Texture2D;
 	class Sprite;
+	class AnimatedSprite;
 }
 
 class ResourceManager {
@@ -23,8 +24,8 @@ public:
 	std::shared_ptr<Renderer::ShaderProgram> LoadShaders(const std::string& shaderName, const std::string& vertexPath, const std::string& fragmentPath); 
 	std::shared_ptr<Renderer::ShaderProgram> GetShaderProgram(const std::string& shaderName) const;
 
-	std::shared_ptr<Renderer::Texture2D> loadTexture(const std::string &textureName, const std::string &texturePath);
-	std::shared_ptr<Renderer::Texture2D> getTexture(const std::string& textureName) const;
+	std::shared_ptr<Renderer::Texture2D> LoadTexture(const std::string &textureName, const std::string &texturePath);
+	std::shared_ptr<Renderer::Texture2D> GetTexture(const std::string& textureName) const;
 
 	std::shared_ptr<Renderer::Sprite> LoadSprite(const std::string& spriteName,
 												 const std::string& textureName,
@@ -33,6 +34,14 @@ public:
 												 const unsigned int spriteHeight,
 												const std::string& initialSubTexureName = "defaultSubTexture");
 	std::shared_ptr<Renderer::Sprite> GetSprite(const std::string &spriteName);
+
+	std::shared_ptr<Renderer::AnimatedSprite> LoadAnimatedSprite(const std::string& spriteName,
+												 const std::string& textureName,
+												 const std::string& shaderName,
+												 const unsigned int spriteWidth,
+												 const unsigned int spriteHeight,
+												const std::string& initialSubTexureName = "defaultSubTexture");
+	std::shared_ptr<Renderer::AnimatedSprite> GetAnimatedSprite(const std::string &spriteName);
 
 	std::shared_ptr<Renderer::Texture2D> LoadTextureAtlas(const std::string &textureName,
 														  const std::string &texturePath,
@@ -51,6 +60,9 @@ private:
 
 	typedef std::map<std::string, std::shared_ptr<Renderer::Sprite>> SpritesMap;
 	SpritesMap m_sprites;
+
+	typedef std::map<std::string, std::shared_ptr<Renderer::AnimatedSprite>> AnimatedSpritesMap;
+	AnimatedSpritesMap m_animatedSprites;
 
 	std::string m_path;
 };

@@ -81,6 +81,14 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj: CXX_COMPILER__O
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
+build CMakeFiles/OpenGLLearning.dir/src/Renderer/AnimatedSprite.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/AnimatedSprite.cpp || cmake_object_order_depends_target_OpenGLLearning
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\AnimatedSprite.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
+
 build CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Resources\ResourceManager.cpp.obj.d
@@ -97,7 +105,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj: CXX_C
 #############################################
 # Link the executable bin\OpenGLLearning.exe
 
-build bin/OpenGLLearning.exe: CXX_EXECUTABLE_LINKER__OpenGLLearning_Debug CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj | external/glfw/src/libglfw3.a external/glad/libglad.a || external/glad/libglad.a external/glfw/src/libglfw3.a
+build bin/OpenGLLearning.exe: CXX_EXECUTABLE_LINKER__OpenGLLearning_Debug CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/AnimatedSprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj | external/glfw/src/libglfw3.a external/glad/libglad.a || external/glad/libglad.a external/glfw/src/libglfw3.a
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = external/glfw/src/libglfw3.a  external/glad/libglad.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

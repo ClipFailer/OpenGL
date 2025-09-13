@@ -13,24 +13,30 @@ namespace Renderer {
 			   	   const std::shared_ptr<ShaderProgram> pShaderProgram,
 			       const glm::vec2& position,
 			       const glm::vec2& size,
-			       const float rotation) 
-				: m_pTexture(std::move(pTexture)), 
-				  m_pShaderProgram(std::move(pShaderProgram)),
-				  m_position(position),
-     			  m_size(size),
-      			  m_rotation(rotation),
-				  m_name(name)
+			       const float rotation) : m_pTexture(std::move(pTexture)), 
+				  						   m_pShaderProgram(std::move(pShaderProgram)),
+				  						   m_position(position),
+     			  						   m_size(size),
+      			  						   m_rotation(rotation),
+				  						   m_name(name)
 	{
         auto subTexture = m_pTexture->GetSubTexture(initialSubTexture);
 		
 		const GLfloat verteces[]
 		{
-			//Verteces	Texture coords
-			//X   Y		//U	  V
-			0.f, 0.f,	subTexture.leftBottomUV.x, subTexture.leftBottomUV.y,
-			0.f, 1.f,	subTexture.leftBottomUV.x, subTexture.rightTopUV.y,
-			1.f, 1.f, 	subTexture.rightTopUV.x, subTexture.rightTopUV.y,
-			1.f, 0.f,	subTexture.rightTopUV.x, subTexture.leftBottomUV.y,
+			//X   Y	
+			0.f, 0.f,	
+			0.f, 1.f,			
+			1.f, 1.f, 	
+			1.f, 0.f,		
+		};
+
+		const GLfloat textureCoords[]
+		{
+			subTexture.leftBottomUV.x, subTexture.leftBottomUV.y,
+			subTexture.leftBottomUV.x, subTexture.rightTopUV.y,
+			subTexture.rightTopUV.x, subTexture.rightTopUV.y,
+			subTexture.rightTopUV.x, subTexture.leftBottomUV.y,
 		};
 
 		const GLuint indeces[]
@@ -43,22 +49,27 @@ namespace Renderer {
 		glGenVertexArrays(1, &m_VAO);
 		glBindVertexArray(m_VAO);
 
-		// VBO
-		glGenBuffers(1, &m_VBO);
-		glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+		// VBO - Verteces coords
+		glGenBuffers(1, &m_vertexVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, m_vertexVBO);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(verteces), verteces, GL_STATIC_DRAW);
 		
 		// VBO - Verteces coords
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 2, 
 							  GL_FLOAT, GL_FALSE, 
-							  4 * sizeof(GL_FLOAT), (void*)0);
+							  2 * sizeof(GL_FLOAT), (void*)0);
 
+		// VBO - texture coords
+		glGenBuffers(1, &m_textureVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, m_textureVBO);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(textureCoords), textureCoords, GL_STATIC_DRAW);
+							
 		// VBO - Texture coords
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 2, 
 							  GL_FLOAT, GL_FALSE, 
-							  4 * sizeof(GL_FLOAT), (void*)(2 * sizeof(GL_FLOAT)));
+							  2 * sizeof(GL_FLOAT), (void*)0);
 		
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -72,7 +83,7 @@ namespace Renderer {
 
     Sprite::~Sprite() 
 	{
-		glDeleteBuffers(1, &m_VBO);
+		glDeleteBuffers(1, &m_vertexVBO);
 		glDeleteBuffers(1, &m_IBO);
 		glDeleteVertexArrays(1, &m_VAO);
     }

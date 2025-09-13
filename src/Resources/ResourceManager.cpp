@@ -3,6 +3,7 @@
 #include "Renderer/ShaderProgram.h"
 #include "Renderer/Texture2D.h"
 #include "Renderer/Sprite.h"
+#include "Renderer/AnimatedSprite.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STBI_ONLY_PNG
@@ -66,7 +67,7 @@ std::shared_ptr<Renderer::ShaderProgram> ResourceManager::GetShaderProgram(const
 	return nullptr;
 }
 
-std::shared_ptr<Renderer::Texture2D> ResourceManager::loadTexture(const std::string &textureName,
+std::shared_ptr<Renderer::Texture2D> ResourceManager::LoadTexture(const std::string &textureName,
 	 															  const std::string &texturePath) 
 {
 	int channels = 0;
@@ -90,7 +91,7 @@ std::shared_ptr<Renderer::Texture2D> ResourceManager::loadTexture(const std::str
 	return newTexture;
 }
 
-std::shared_ptr<Renderer::Texture2D> ResourceManager::getTexture(const std::string &textureName) const {
+std::shared_ptr<Renderer::Texture2D> ResourceManager::GetTexture(const std::string &textureName) const {
     TexturesMap::const_iterator it = m_textures.find(textureName);
 	if (it != m_textures.end())
 	{
@@ -109,7 +110,7 @@ std::shared_ptr<Renderer::Sprite> ResourceManager::LoadSprite(const std::string 
 															  const std::string& initialSubTexureName)
 															  								
 {
-    auto pTexture = getTexture(textureName);
+    auto pTexture = GetTexture(textureName);
 	if (!pTexture)
 	{
 		return nullptr;
@@ -144,13 +145,59 @@ std::shared_ptr<Renderer::Sprite> ResourceManager::GetSprite(const std::string &
 	return nullptr;
 }
 
+std::shared_ptr<Renderer::AnimatedSprite> ResourceManager::LoadAnimatedSprite(const std::string &spriteName, 
+																  	  	const std::string &textureName, 
+																	  	const std::string &shaderName, 
+																	  	const unsigned int spriteWidth, 
+																	  	const unsigned int spriteHeight,
+																	  	const std::string &initialSubTexureName) 
+{
+    auto texture = GetTexture(textureName);
+	if (!texture)
+	{
+		std::cerr << "Can't find texture: " << textureName << std::endl;
+		return nullptr;
+	}
+
+	auto shader = GetShaderProgram(shaderName);
+	if (!shader)
+	{
+		std::cerr << "Can't find shader: " << shaderName << std::endl;
+		return nullptr;
+	}
+
+	auto newAnimatedSprite = m_animatedSprites.emplace(
+		spriteName, 
+		std::make_shared<Renderer::AnimatedSprite>(spriteName,
+												   texture,
+												   initialSubTexureName,
+												   shader,
+												   glm::vec2(0.f, 0.f),
+												   glm::vec2(spriteWidth, spriteHeight))).first->second;
+
+	return newAnimatedSprite;
+}
+
+std::shared_ptr<Renderer::AnimatedSprite> ResourceManager::GetAnimatedSprite(const std::string &spriteName) 
+{
+    auto it = m_animatedSprites.find(spriteName);
+
+	if (it != m_animatedSprites.end())
+	{
+		std::cerr << "Can't find sprite: " << spriteName << std::endl;
+		return it->second;
+	}
+
+	return nullptr;
+}
+
 std::shared_ptr<Renderer::Texture2D> ResourceManager::LoadTextureAtlas(const std::string &textureName, 
 																	   const std::string &texturePath, 
 																	   const std::vector<std::string> subTextures,
 																	   const unsigned int subTextureWidth,
 																	   const unsigned int subTextureHeight) 
 {
-    auto pTexture = loadTexture(textureName, texturePath);
+    auto pTexture = LoadTexture(textureName, texturePath);
 
 	if (pTexture)
 	{
@@ -172,7 +219,7 @@ std::shared_ptr<Renderer::Texture2D> ResourceManager::LoadTextureAtlas(const std
 			if (currentTextureOffsetX >= textureWidth)
 			{
 				currentTextureOffsetX = 0;
-				currentTextureOffsetY += subTextureHeight;
+				currentTextureOffsetY -= subTextureHeight;
 			}
 		}
 	}
