@@ -85,14 +85,14 @@ namespace Renderer {
 								  const glm::vec2 &rightBottomUV, 
 								  const glm::vec2 &leftTopUV) 
 	{
-		m_subtexturesMap.emplace(std::move(name), SubTexture2D(rightBottomUV, leftTopUV));
+		m_subtextures.emplace(std::move(name), SubTexture2D(rightBottomUV, leftTopUV));
     }
 
     const Texture2D::SubTexture2D& Texture2D::GetSubTexture(const std::string &name) const
 	{
-        auto it = m_subtexturesMap.find(name);
+        auto it = m_subtextures.find(name);
 
-		if (it != m_subtexturesMap.end())
+		if (it != m_subtextures.end())
 		{
 			return it->second;
 		}

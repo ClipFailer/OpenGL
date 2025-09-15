@@ -11,6 +11,9 @@ add_executable(${PROJECT_NAME}
 	src/Renderer/AnimatedSprite.cpp
 	src/Tools/Tools.h
 	src/Resources/ResourceManager.cpp
+	src/Game/Game.cpp
+	src/Game/Tank.cpp
+
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE src)

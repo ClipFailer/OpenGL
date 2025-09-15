@@ -13,23 +13,33 @@ namespace Renderer {
 					  const std::string& fragmentShader);
 		~ShaderProgram();
 
-		ShaderProgram() = delete;
-		ShaderProgram(const ShaderProgram&) = delete;
-		ShaderProgram& operator=(const ShaderProgram) = delete;
+		ShaderProgram() 								= delete;
+		ShaderProgram(const ShaderProgram&) 			= delete;
+		ShaderProgram& operator=(const ShaderProgram&) 	= delete;
 
-		ShaderProgram& operator=(ShaderProgram&& other);
-		ShaderProgram(ShaderProgram&& other);
+		ShaderProgram& operator=(ShaderProgram&& other)	noexcept;
+		ShaderProgram(ShaderProgram&& other)			noexcept;
 
-		bool CreateShader(const std::string& source, const GLenum shaderType, GLuint& shaderID);
-		bool IsCompiled() { return m_isCompiled; }
+		bool CreateShader(
+			const std::string& 	source, 
+			const GLenum 		shaderType, 
+			GLuint& 			shaderID
+		);
+		bool IsCompiled() noexcept { return m_isCompiled; }
 		void Use();
-		void SetInt(const std::string& name, const GLint value);
-		void SetMat4(const std::string& name, const glm::mat4 &matrix);
-		std::string GetName() const;
+		void SetInt(
+			const std::string& 	name, 
+			const GLint 		value
+		);
+		void SetMat4(
+			const std::string& 	name, 
+			const glm::mat4 	&matrix
+		);
+		std::string GetName() const noexcept;
 
 	private:
-		bool m_isCompiled = false;
-		GLuint m_ID = 0;
-		std::string m_name;
+		bool 			m_isCompiled 	= false;
+		GLuint 			m_ID 			= 0;
+		std::string 	m_name;
 	};
 }

@@ -37,6 +37,18 @@
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Game\\Game.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Game\\Game.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Game/Game.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Game/Game.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Game\\Tank.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Game\\Tank.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Game/Tank.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Game/Tank.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
   "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -DUNICODE -D_GLFW_WIN32 -D_UNICODE -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glfw/src -IC:/Projects/cpp/ogl/learning/build/external/glfw/src -g -std=c99 -Wall -o external\\glfw\\src\\CMakeFiles\\glfw.dir\\context.c.obj -c C:\\Projects\\cpp\\ogl\\learning\\external\\glfw\\src\\context.c",
   "file": "C:/Projects/cpp/ogl/learning/external/glfw/src/context.c",
   "output": "C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/glfw.dir/context.c.obj"

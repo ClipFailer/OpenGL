@@ -15,14 +15,31 @@
 
 #include <string>
 
-ResourceManager::ResourceManager(const std::string &resourcePath) {
+static std::string GetFileString(const std::string& filePath);
+
+ResourceManager::ShaderProgramsMap ResourceManager::m_shaderPrograms;
+ResourceManager::TexturesMap ResourceManager::m_textures;
+ResourceManager::SpritesMap ResourceManager::m_sprites;
+ResourceManager::AnimatedSpritesMap ResourceManager::m_animatedSprites;
+std::string ResourceManager::m_path;
+
+void ResourceManager::SetPath(const std::string &resourcePath) 
+{
 	size_t found = resourcePath.find_last_of("/\\");
 	m_path = resourcePath.substr(0, found);
 }
 
+void ResourceManager::UnloadAllResources() 
+{
+	m_animatedSprites.clear();
+	m_shaderPrograms.clear();
+	m_sprites.clear();
+	m_textures.clear();
+}
+
 std::shared_ptr<Renderer::ShaderProgram> ResourceManager::LoadShaders(const std::string &shaderName, 
-																	  const std::string &vertexPath, 
-																	  const std::string &fragmentPath) 
+																	  		 const std::string &vertexPath, 
+																	  		 const std::string &fragmentPath) 
 {
     std::string vertexString = GetFileString(vertexPath);	
 	if (vertexString.empty())
@@ -54,7 +71,7 @@ std::shared_ptr<Renderer::ShaderProgram> ResourceManager::LoadShaders(const std:
 	return nullptr;
 }
 
-std::shared_ptr<Renderer::ShaderProgram> ResourceManager::GetShaderProgram(const std::string &shaderName) const 
+std::shared_ptr<Renderer::ShaderProgram> ResourceManager::GetShaderProgram(const std::string &shaderName) 
 {
     ShaderProgramsMap::const_iterator it = m_shaderPrograms.find(shaderName);
 
@@ -91,7 +108,8 @@ std::shared_ptr<Renderer::Texture2D> ResourceManager::LoadTexture(const std::str
 	return newTexture;
 }
 
-std::shared_ptr<Renderer::Texture2D> ResourceManager::GetTexture(const std::string &textureName) const {
+std::shared_ptr<Renderer::Texture2D> ResourceManager::GetTexture(const std::string &textureName) 
+{
     TexturesMap::const_iterator it = m_textures.find(textureName);
 	if (it != m_textures.end())
 	{
@@ -146,11 +164,11 @@ std::shared_ptr<Renderer::Sprite> ResourceManager::GetSprite(const std::string &
 }
 
 std::shared_ptr<Renderer::AnimatedSprite> ResourceManager::LoadAnimatedSprite(const std::string &spriteName, 
-																  	  	const std::string &textureName, 
-																	  	const std::string &shaderName, 
-																	  	const unsigned int spriteWidth, 
-																	  	const unsigned int spriteHeight,
-																	  	const std::string &initialSubTexureName) 
+																  	  		  const std::string &textureName, 
+																	  		  const std::string &shaderName, 
+																	  		  const unsigned int spriteWidth, 
+																	  		  const unsigned int spriteHeight,
+																	  		  const std::string &initialSubTexureName) 
 {
     auto texture = GetTexture(textureName);
 	if (!texture)
@@ -183,11 +201,9 @@ std::shared_ptr<Renderer::AnimatedSprite> ResourceManager::GetAnimatedSprite(con
     auto it = m_animatedSprites.find(spriteName);
 
 	if (it != m_animatedSprites.end())
-	{
-		std::cerr << "Can't find sprite: " << spriteName << std::endl;
 		return it->second;
-	}
 
+	std::cerr << "Can't find sprite: " << spriteName << std::endl;
 	return nullptr;
 }
 
@@ -227,7 +243,8 @@ std::shared_ptr<Renderer::Texture2D> ResourceManager::LoadTextureAtlas(const std
 	return pTexture;
 }
 
-std::string ResourceManager::GetFileString(const std::string &relativeFilePath) const {
+std::string ResourceManager::GetFileString(const std::string &relativeFilePath)
+{
 	std::fstream file;
 	file.open(m_path + "/" + relativeFilePath, std::ios::in | std::ios::binary);
 

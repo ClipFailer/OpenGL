@@ -4,10 +4,12 @@
 #include "Tools/Tools.h"
 #include <glm/gtc/type_ptr.hpp>
 
-Renderer::ShaderProgram::ShaderProgram(const std::string &name,
-									   const std::string &vertexShader, 
-									   const std::string &fragmentShader) 
-									: m_name(name)
+Renderer::ShaderProgram::ShaderProgram(
+	const std::string &name,
+	const std::string &vertexShader, 
+	const std::string &fragmentShader
+) 
+	: m_name(name)
 {
 	GLuint vertexShaderID = 0;
 	if(!CreateShader(vertexShader, GL_VERTEX_SHADER, vertexShaderID))
@@ -50,30 +52,37 @@ Renderer::ShaderProgram::ShaderProgram(const std::string &name,
 	glDeleteShader(fragmentShaderID);
 }
 
-Renderer::ShaderProgram::~ShaderProgram() {
+Renderer::ShaderProgram::~ShaderProgram() 
+{
 	glDeleteProgram(m_ID);
 }
 
-Renderer::ShaderProgram &Renderer::ShaderProgram::operator=(ShaderProgram&& other) {
+Renderer::ShaderProgram &Renderer::ShaderProgram::operator=(ShaderProgram&& other) 
+{
     glDeleteProgram(m_ID);
-	m_ID = other.m_ID;
-	m_isCompiled = other.m_isCompiled;
+	m_ID 				= other.m_ID;
+	m_isCompiled 		= other.m_isCompiled;
 
-	other.m_ID = 0;
-	other.m_isCompiled = false;
+	other.m_ID 			= 0;
+	other.m_isCompiled 	= false;
 
 	return *this;
 }
 
-Renderer::ShaderProgram::ShaderProgram(ShaderProgram &&other) {
-	m_ID = other.m_ID;
-	m_isCompiled = other.m_isCompiled;
+Renderer::ShaderProgram::ShaderProgram(ShaderProgram &&other) 
+{
+	m_ID 				= other.m_ID;
+	m_isCompiled 		= other.m_isCompiled;
 
-	other.m_ID = 0;
-	other.m_isCompiled = false;
+	other.m_ID 			= 0;
+	other.m_isCompiled 	= false;
 }
 
-bool Renderer::ShaderProgram::CreateShader(const std::string &source, const GLenum shaderType, GLuint &shaderID) {
+bool Renderer::ShaderProgram::CreateShader(
+	const std::string 	&source, 
+	const GLenum 		shaderType, 
+	GLuint				&shaderID
+) {
     shaderID = glCreateShader(shaderType);
 	const char* code = source.c_str();
 	glShaderSource(shaderID, 1, &code, nullptr);
@@ -93,25 +102,35 @@ bool Renderer::ShaderProgram::CreateShader(const std::string &source, const GLen
 	return true;
 }
 
-void Renderer::ShaderProgram::Use() {
+void Renderer::ShaderProgram::Use() 
+{
 	glUseProgram(m_ID);
 }
 
-void Renderer::ShaderProgram::SetInt(const std::string &name, const GLint value) 
+void Renderer::ShaderProgram::SetInt(
+	const std::string 	&name, 
+	const GLint 		value
+) 
 {
 	glUniform1i(glGetUniformLocation(m_ID, name.c_str()), value);
 }
 
-void Renderer::ShaderProgram::SetMat4(const std::string &name, const glm::mat4 &matrix) 
+void Renderer::ShaderProgram::SetMat4(
+	const std::string 	&name, 
+	const glm::mat4 	&matrix
+) 
 {
-	glUniformMatrix4fv(glGetUniformLocation(m_ID, 
-											name.c_str()), 
-											1, 
-											GL_FALSE, 
-											glm::value_ptr(matrix));
+	glUniformMatrix4fv(glGetUniformLocation(
+							m_ID, 
+							name.c_str()
+						), 
+						1, 
+						GL_FALSE, 
+						glm::value_ptr(matrix)
+					);
 }
 
-std::string Renderer::ShaderProgram::GetName() const 
+std::string Renderer::ShaderProgram::GetName() const noexcept
 {
 	return m_name;
 }

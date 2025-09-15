@@ -13,18 +13,19 @@ namespace Renderer {
 
 	class Sprite {
 	public:
-		Sprite(const std::string &name,
-			   const std::shared_ptr<Texture2D> pTexture,
-			   const std::string &initialSubTexture,
-			   const std::shared_ptr<ShaderProgram> pShaderProgram,
-			   const glm::vec2& position = glm::vec2(0.f),
-			   const glm::vec2& size = glm::vec2(1.f),
-			   const float rotation = 0.f);
+		Sprite(const std::string 						&name,
+			   const std::shared_ptr<Texture2D> 		pTexture,
+			   const std::string 						&initialSubTexture,
+			   const std::shared_ptr<ShaderProgram> 	pShaderProgram,
+			   const glm::vec2& 						position 				= glm::vec2(0.f),
+			   const glm::vec2& 						size 					= glm::vec2(1.f),
+			   const float 								rotation 				= 0.f
+		);
 		
 		~Sprite();
 
-		Sprite(const Sprite&) = delete;
-		Sprite& operator=(const Sprite&) = delete;
+		Sprite(const Sprite&) 				= delete;
+		Sprite& operator=(const Sprite&) 	= delete;
 
 		virtual void Render() const;
 		void SetPosition(const glm::vec2& newPosition);
@@ -32,15 +33,15 @@ namespace Renderer {
 		void SetRotation(const float newRotation);
 
 	protected:
-		std::shared_ptr<Texture2D> m_pTexture;
-		std::shared_ptr<ShaderProgram> m_pShaderProgram;
-		glm::vec2 m_position;
-		glm::vec2 m_size;
-		float m_rotation;
-		GLuint m_VAO = 0;
-		GLuint m_vertexVBO = 0;
-		GLuint m_textureVBO = 0;
-		GLuint m_IBO = 0;
-		std::string m_name;
+		std::shared_ptr<Texture2D> 		m_pTexture;
+		std::shared_ptr<ShaderProgram> 	m_pShaderProgram;
+		glm::vec2 						m_position;
+		glm::vec2 						m_size;
+		float 							m_rotation;
+		GLuint 							m_VAO 				= 0;
+		GLuint 							m_vertexVBO 		= 0;
+		GLuint 							m_textureVBO 		= 0;
+		GLuint 							m_IBO 				= 0;
+		std::string						m_name;
 	};
 }

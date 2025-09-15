@@ -7,18 +7,21 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 namespace Renderer {
-	Sprite::Sprite(const std::string &name,
-			   	   const std::shared_ptr<Texture2D> pTexture, 
-				   const std::string &initialSubTexture,
-			   	   const std::shared_ptr<ShaderProgram> pShaderProgram,
-			       const glm::vec2& position,
-			       const glm::vec2& size,
-			       const float rotation) : m_pTexture(std::move(pTexture)), 
-				  						   m_pShaderProgram(std::move(pShaderProgram)),
-				  						   m_position(position),
-     			  						   m_size(size),
-      			  						   m_rotation(rotation),
-				  						   m_name(name)
+	Sprite::Sprite(
+		const std::string&						name,
+		const std::shared_ptr<Texture2D> 		pTexture, 
+		const std::string& 						initialSubTexture,
+		const std::shared_ptr<ShaderProgram> 	pShaderProgram,
+		const glm::vec2& 						position,
+		const glm::vec2& 						size,
+		const float 							rotation
+	) 
+		: m_pTexture(std::move(pTexture))
+		, m_pShaderProgram(std::move(pShaderProgram))
+		, m_position(position)
+		, m_size(size)
+		, m_rotation(rotation)
+		, m_name(name)
 	{
         auto subTexture = m_pTexture->GetSubTexture(initialSubTexture);
 		
