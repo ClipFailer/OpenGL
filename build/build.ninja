@@ -57,6 +57,22 @@ build CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj: CXX_COMPILER__OpenGLLearni
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src
 
+build CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp || cmake_object_order_depends_target_OpenGLLearning
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Resources\ResourceManager.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Resources
+
+build CMakeFiles/OpenGLLearning.dir/src/Renderer/Renderer.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/Renderer.cpp || cmake_object_order_depends_target_OpenGLLearning
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\Renderer.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
+
 build CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/ShaderProgram.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\ShaderProgram.cpp.obj.d
@@ -89,13 +105,37 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/AnimatedSprite.cpp.obj: CXX_COM
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
-build CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp || cmake_object_order_depends_target_OpenGLLearning
+build CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexBuffer.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/VertexBuffer.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Resources\ResourceManager.cpp.obj.d
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\VertexBuffer.cpp.obj.d
   FLAGS = -g -std=gnu++17
   INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
-  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Resources
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
+
+build CMakeFiles/OpenGLLearning.dir/src/Renderer/IndexBuffer.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/IndexBuffer.cpp || cmake_object_order_depends_target_OpenGLLearning
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\IndexBuffer.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
+
+build CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArray.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/VertexArray.cpp || cmake_object_order_depends_target_OpenGLLearning
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\VertexArray.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
+
+build CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArrayLayout.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Renderer/VertexArrayLayout.cpp || cmake_object_order_depends_target_OpenGLLearning
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\VertexArrayLayout.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
+  OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
 build CMakeFiles/OpenGLLearning.dir/src/Game/Game.cpp.obj: CXX_COMPILER__OpenGLLearning_unscanned_Debug C$:/Projects/cpp/ogl/learning/src/Game/Game.cpp || cmake_object_order_depends_target_OpenGLLearning
   CONFIG = Debug
@@ -121,7 +161,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Game/Tank.cpp.obj: CXX_COMPILER__OpenGLL
 #############################################
 # Link the executable bin\OpenGLLearning.exe
 
-build bin/OpenGLLearning.exe: CXX_EXECUTABLE_LINKER__OpenGLLearning_Debug CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/AnimatedSprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Game/Game.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Game/Tank.cpp.obj | external/glfw/src/libglfw3.a external/glad/libglad.a || external/glad/libglad.a external/glfw/src/libglfw3.a
+build bin/OpenGLLearning.exe: CXX_EXECUTABLE_LINKER__OpenGLLearning_Debug CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Renderer.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/AnimatedSprite.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexBuffer.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/IndexBuffer.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArray.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArrayLayout.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Game/Game.cpp.obj CMakeFiles/OpenGLLearning.dir/src/Game/Tank.cpp.obj | external/glfw/src/libglfw3.a external/glad/libglad.a || external/glad/libglad.a external/glfw/src/libglfw3.a
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = external/glfw/src/libglfw3.a  external/glad/libglad.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

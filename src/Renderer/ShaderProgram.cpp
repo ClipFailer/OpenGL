@@ -102,7 +102,7 @@ bool Renderer::ShaderProgram::CreateShader(
 	return true;
 }
 
-void Renderer::ShaderProgram::Use() 
+void Renderer::ShaderProgram::Use() const
 {
 	glUseProgram(m_ID);
 }

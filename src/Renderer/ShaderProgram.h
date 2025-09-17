@@ -26,7 +26,7 @@ namespace Renderer {
 			GLuint& 			shaderID
 		);
 		bool IsCompiled() noexcept { return m_isCompiled; }
-		void Use();
+		void Use() const noexcept;
 		void SetInt(
 			const std::string& 	name, 
 			const GLint 		value

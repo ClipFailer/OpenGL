@@ -6,6 +6,10 @@
 #include <glm/vec2.hpp>
 #include <string>
 
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
+#include "VertexArray.h"
+
 namespace Renderer {
 
 	class Texture2D;
@@ -13,13 +17,13 @@ namespace Renderer {
 
 	class Sprite {
 	public:
-		Sprite(const std::string 						&name,
-			   const std::shared_ptr<Texture2D> 		pTexture,
-			   const std::string 						&initialSubTexture,
-			   const std::shared_ptr<ShaderProgram> 	pShaderProgram,
-			   const glm::vec2& 						position 				= glm::vec2(0.f),
-			   const glm::vec2& 						size 					= glm::vec2(1.f),
-			   const float 								rotation 				= 0.f
+		Sprite(const std::string &name,
+			   const std::shared_ptr<Texture2D> pTexture,
+			   const std::string &initialSubTexture,
+			   const std::shared_ptr<ShaderProgram> pShaderProgram,
+			   const glm::vec2& position = glm::vec2(0.f),
+			   const glm::vec2& size = glm::vec2(1.f),
+			   const float rotation = 0.f
 		);
 		
 		~Sprite();
@@ -38,10 +42,11 @@ namespace Renderer {
 		glm::vec2 						m_position;
 		glm::vec2 						m_size;
 		float 							m_rotation;
-		GLuint 							m_VAO 				= 0;
-		GLuint 							m_vertexVBO 		= 0;
-		GLuint 							m_textureVBO 		= 0;
-		GLuint 							m_IBO 				= 0;
 		std::string						m_name;
+
+		VertexArray						m_VAO;
+		VertexBuffer 					m_vertexVBO;
+		VertexBuffer 					m_textureVBO;
+		IndexBuffer 					m_IBO;
 	};
 }

@@ -7,6 +7,7 @@
 
 #include <iostream>
 
+#include "Renderer/Renderer.h"
 #include "Game/Game.h"
 #include "Tools/Tools.h"
 #include "Resources/ResourceManager.h"
@@ -22,7 +23,7 @@ void changeWindowSizeCallback(
 ) {
 	g_windowSize.x = width;
 	g_windowSize.y = height;
-	glViewport(0, 0, g_windowSize.x, g_windowSize.y);
+	Renderer::Renderer::setViewport(g_windowSize.x, g_windowSize.y);
 }
 
 void keyHandlerCallback(
@@ -37,6 +38,8 @@ void keyHandlerCallback(
 		std::cout << "Window has closed!\n";
 		glfwSetWindowShouldClose(window, GLFW_TRUE);
 	}
+
+	g_game.SetKey(key, action);
 }
 
 int main(int argc, char** argv)
@@ -51,7 +54,14 @@ int main(int argc, char** argv)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow *window = glfwCreateWindow(800, 600, "OpenGL Tutorial", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(
+		g_windowSize.x, 
+		g_windowSize.y, 
+		"OpenGL Tutorial", 
+		nullptr, 
+		nullptr
+	);
+
 	if (!window)
 	{
 		std::cerr << "Failed to create window\n";
@@ -72,12 +82,19 @@ int main(int argc, char** argv)
 	}
 
 	{
+		std::cout << "Renderer: " 
+			<< Renderer::Renderer::getRendererName() 
+			<< std::endl;
+		std::cout << "OpenGL version: " 
+			<< Renderer::Renderer::getOpenGLVersion()
+			<< std::endl;
+
 		ResourceManager::SetPath(argv[0]);
 
 		if (!g_game.Init())
 			throw std::runtime_error("Failed to inizialize game");
 
-		glcall(glClearColor(0.0f, 0.1f, 0.2f, 1.0f));
+		Renderer::Renderer::setClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 		double lastLite = glfwGetTime();
 		while (!glfwWindowShouldClose(window))
@@ -88,7 +105,7 @@ int main(int argc, char** argv)
 
 			g_game.Update(deltaTime);
 
-			glcall(glClear(GL_COLOR_BUFFER_BIT));
+			Renderer::Renderer::clear();
 
 			g_game.Render();
 

@@ -1,10 +1,11 @@
 #pragma once
 
 #include <array>
-
-class Tank;
+#include <memory>
 
 #include <glm/vec2.hpp>
+
+class Tank;
 
 class Game
 {
@@ -26,7 +27,7 @@ private:
 		Pause,
 	};
 
-	EGameState m_eGameSate;
+	EGameState m_eGameState;
 	glm::ivec2 m_windowSize;
 
 	std::unique_ptr<Tank> m_pTank;

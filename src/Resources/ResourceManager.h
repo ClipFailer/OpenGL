@@ -5,6 +5,13 @@
 #include <map>
 #include <vector>
 
+namespace Renderer {
+	class ShaderProgram;
+	class Texture2D;
+	class Sprite;
+	class AnimatedSprite;
+}
+
 using ShaderPtr = std::shared_ptr<Renderer::ShaderProgram>;
 using TexturePtr = std::shared_ptr<Renderer::Texture2D>;
 using SpritePtr = std::shared_ptr<Renderer::Sprite>;
@@ -15,32 +22,29 @@ using TexturesMap = std::map<std::string, std::shared_ptr<Renderer::Texture2D>>;
 using SpritesMap = std::map<std::string, std::shared_ptr<Renderer::Sprite>>;
 using AnimatedSpritesMap = std::map<std::string, std::shared_ptr<Renderer::AnimatedSprite>>;
 
-namespace Renderer {
-	class ShaderProgram;
-	class Texture2D;
-	class Sprite;
-	class AnimatedSprite;
-}
-
 class ResourceManager {
 public:
 	static void SetPath(const std::string& resourcePath);
 	static void UnloadAllResources();
 
-	ResourceManager() = delete;
-	~ResourceManager() = delete;
+	ResourceManager() 									= delete;
+	~ResourceManager() 									= delete;
 
-	ResourceManager(const ResourceManager& ) = delete;
-	ResourceManager& operator=(const ResourceManager&) = delete;
-	ResourceManager(ResourceManager&&) = delete;
+	ResourceManager(const ResourceManager& ) 			= delete;
+	ResourceManager& operator=(const ResourceManager&) 	= delete;
+	ResourceManager(ResourceManager&&) 					= delete;
 
-	static ShaderPtr LoadShaders(const std::string& 	shaderName, 
-								 const std::string& 	vertexPath, 
-								 const std::string& 	fragmentPath); 
+	static ShaderPtr LoadShaders(
+		const std::string& 	shaderName, 
+		const std::string& 	vertexPath, 
+		const std::string& 	fragmentPath
+	); 
 	static ShaderPtr GetShaderProgram(const std::string& shaderName);
 
-	static TexturePtr LoadTexture(const std::string &textureName, 
-								  const std::string &texturePath);
+	static TexturePtr LoadTexture(
+		const std::string& textureName, 
+		const std::string& texturePath
+	);
 	static TexturePtr GetTexture(const std::string& textureName);
 
 	static SpritePtr LoadSprite(

@@ -7,6 +7,18 @@
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Resources\\ResourceManager.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Resources\\ResourceManager.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\Renderer.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\Renderer.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/Renderer.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/Renderer.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\ShaderProgram.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\ShaderProgram.cpp",
   "file": "C:/Projects/cpp/ogl/learning/src/Renderer/ShaderProgram.cpp",
   "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj"
@@ -31,9 +43,27 @@
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Resources\\ResourceManager.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Resources\\ResourceManager.cpp",
-  "file": "C:/Projects/cpp/ogl/learning/src/Resources/ResourceManager.cpp",
-  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj"
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\VertexBuffer.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\VertexBuffer.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/VertexBuffer.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexBuffer.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\IndexBuffer.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\IndexBuffer.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/IndexBuffer.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/IndexBuffer.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\VertexArray.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\VertexArray.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/VertexArray.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArray.cpp.obj"
+},
+{
+  "directory": "C:/Projects/cpp/ogl/learning/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include -g -std=gnu++17 -o CMakeFiles\\OpenGLLearning.dir\\src\\Renderer\\VertexArrayLayout.cpp.obj -c C:\\Projects\\cpp\\ogl\\learning\\src\\Renderer\\VertexArrayLayout.cpp",
+  "file": "C:/Projects/cpp/ogl/learning/src/Renderer/VertexArrayLayout.cpp",
+  "output": "C:/Projects/cpp/ogl/learning/build/CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArrayLayout.cpp.obj"
 },
 {
   "directory": "C:/Projects/cpp/ogl/learning/build",

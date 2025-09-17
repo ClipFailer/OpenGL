@@ -1,8 +1,11 @@
 #include "AnimatedSprite.h"
 
+#include <iostream>
+
+#include <glad/gl.h>
+
 #include "Texture2D.h"
 
-#include <iostream>
 
 namespace Renderer
 {
@@ -34,7 +37,7 @@ namespace Renderer
 		{
 			auto subTexture = m_pTexture->GetSubTexture(m_pCurrentAnimationState->second[m_currentFrame].first);
 
-			const GLfloat textureCoords[]
+			std::vector<GLfloat> textureCoords
 			{
 				subTexture.leftBottomUV.x, 	subTexture.leftBottomUV.y,
 				subTexture.leftBottomUV.x, 	subTexture.rightTopUV.y,
@@ -42,9 +45,10 @@ namespace Renderer
 				subTexture.rightTopUV.x,   	subTexture.leftBottomUV.y,
 			};
 
-			glBindBuffer(GL_ARRAY_BUFFER, m_textureVBO);
-			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(textureCoords), textureCoords);
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			m_textureVBO.update(
+				textureCoords.data(), 
+				textureCoords.size() * sizeof(GLfloat)
+			);
 
 			m_redrawSubTexture = false;
 		}

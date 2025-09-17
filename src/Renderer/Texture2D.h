@@ -9,14 +9,14 @@
 namespace Renderer {
 	class Texture2D {
 	public:
-		struct SubTexture2D
-		{
+		struct SubTexture2D {
 			glm::vec2 leftBottomUV;
 			glm::vec2 rightTopUV;
 
 			SubTexture2D(const glm::vec2 &_leftBottonUV, 
-						 const glm::vec2 &_rightTopUV) : leftBottomUV(_leftBottonUV), 
-						 								 rightTopUV(_rightTopUV) {};
+						 const glm::vec2 &_rightTopUV) 
+						 : leftBottomUV(_leftBottonUV)
+						 , rightTopUV(_rightTopUV) {};
 			SubTexture2D() : leftBottomUV(0.f), rightTopUV(1.f) {};
 		};
 

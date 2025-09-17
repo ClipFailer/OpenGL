@@ -1,11 +1,16 @@
 #include "Sprite.h"
 
-#include "Renderer/ShaderProgram.h"
-#include "Renderer/Texture2D.h"
+#include <vector>
 
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "Renderer.h"
+#include "ShaderProgram.h"
+#include "Texture2D.h"
+
+#include "VertexArrayLayout.h"
+;
 namespace Renderer {
 	Sprite::Sprite(
 		const std::string&						name,
@@ -24,71 +29,61 @@ namespace Renderer {
 		, m_name(name)
 	{
         auto subTexture = m_pTexture->GetSubTexture(initialSubTexture);
-		
-		const GLfloat verteces[]
+
+		// VBO - Verteces coords
+		std::vector<GLfloat> verteces
 		{
 			//X   Y	
 			0.f, 0.f,	
 			0.f, 1.f,			
 			1.f, 1.f, 	
-			1.f, 0.f,		
+			1.f, 0.f,
 		};
 
-		const GLfloat textureCoords[]
-		{
+		m_vertexVBO.init(
+			verteces.data(), 
+			verteces.size() * sizeof(GLfloat)
+		);
+
+		// VAO - VertexBuffe5r
+		VertexArrayLayout vertexLayout;
+		vertexLayout.addElement<float>(2, 0);
+		m_VAO.addBuffer(m_vertexVBO, vertexLayout);
+
+		// VBO - Texture coords
+		std::vector<GLfloat> textureCoords {
 			subTexture.leftBottomUV.x, subTexture.leftBottomUV.y,
 			subTexture.leftBottomUV.x, subTexture.rightTopUV.y,
 			subTexture.rightTopUV.x, subTexture.rightTopUV.y,
 			subTexture.rightTopUV.x, subTexture.leftBottomUV.y,
 		};
 
-		const GLuint indeces[]
-		{
+		m_textureVBO.init(
+			textureCoords.data(), 
+			textureCoords.size() * sizeof(GLfloat)
+		);
+		
+		VertexArrayLayout textureLayout;
+		textureLayout.addElement<float>(2, 0);
+		m_VAO.addBuffer(m_textureVBO, textureLayout);
+		
+		// IBO
+		std::vector<GLuint> indeces {
 			0, 1, 2,
 			2, 3, 0,
 		};
 
-		// VAO
-		glGenVertexArrays(1, &m_VAO);
-		glBindVertexArray(m_VAO);
+		m_IBO.init(
+			indeces.data(),
+			indeces.size() * sizeof(GLuint)
+		);
 
-		// VBO - Verteces coords
-		glGenBuffers(1, &m_vertexVBO);
-		glBindBuffer(GL_ARRAY_BUFFER, m_vertexVBO);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(verteces), verteces, GL_STATIC_DRAW);
-		
-		// VBO - Verteces coords
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 2, 
-							  GL_FLOAT, GL_FALSE, 
-							  2 * sizeof(GL_FLOAT), (void*)0);
-
-		// VBO - texture coords
-		glGenBuffers(1, &m_textureVBO);
-		glBindBuffer(GL_ARRAY_BUFFER, m_textureVBO);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(textureCoords), textureCoords, GL_STATIC_DRAW);
-							
-		// VBO - Texture coords
-		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 2, 
-							  GL_FLOAT, GL_FALSE, 
-							  2 * sizeof(GL_FLOAT), (void*)0);
-		
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-		// IBO
-		glGenBuffers(1, &m_IBO);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_IBO);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indeces), indeces, GL_STATIC_DRAW);
-
-		glBindVertexArray(0);
+		m_VAO.unbind();
+		m_IBO.unbind();
 	}
 
     Sprite::~Sprite() 
 	{
-		glDeleteBuffers(1, &m_vertexVBO);
-		glDeleteBuffers(1, &m_IBO);
-		glDeleteVertexArrays(1, &m_VAO);
     }
 
     void Sprite::Render() const
@@ -98,18 +93,34 @@ namespace Renderer {
 		glm::mat4 model(1.f);
 
 		model = glm::translate(model, glm::vec3(m_position, 0.f));
-		model = glm::translate(model, glm::vec3(0.5f * m_size.x, 0.5f * m_size.y, 0.f));
-		model = glm::rotate(model, glm::radians(m_rotation), glm::vec3(0.f, 0.f, 1.f));
-		model = glm::translate(model, glm::vec3(-0.5f * m_size.x, -0.5f * m_size.y, 0.f));
-		model = glm::scale(model, glm::vec3(m_size, 1.f));
 
-		glBindVertexArray(m_VAO);
+		model = glm::translate(
+			model, 
+			glm::vec3(0.5f * m_size.x, 0.5f * m_size.y, 0.f));
+
+		model = glm::rotate(
+			model, 
+			glm::radians(m_rotation), 
+			glm::vec3(0.f, 0.f, 1.f));
+
+		model = glm::translate(
+			model, 
+			glm::vec3(-0.5f * m_size.x, -0.5f * m_size.y, 0.f)
+		);
+		
+		model = glm::scale(
+			model, 
+			glm::vec3(m_size, 1.f)
+		);
+
 		m_pShaderProgram->SetMat4("modelMat", model);
 
 		glActiveTexture(GL_TEXTURE0);
 		m_pTexture->Bind();
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+		Renderer::Draw(m_VAO, m_IBO, *m_pShaderProgram);
     }
 
     void Sprite::SetPosition(const glm::vec2 &newPosition) 
