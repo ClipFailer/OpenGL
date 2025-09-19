@@ -77,6 +77,14 @@
 		"codecvt": "cpp",
 		"ratio": "cpp",
 		"iomanip": "cpp",
-		"chrono": "cpp"
+		"chrono": "cpp",
+		"bitset": "cpp",
+		"condition_variable": "cpp",
+		"regex": "cpp",
+		"mutex": "cpp",
+		"semaphore": "cpp",
+		"stack": "cpp",
+		"stop_token": "cpp",
+		"thread": "cpp"
 	}
 }

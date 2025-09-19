@@ -21,6 +21,7 @@ C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/list_install_com
 C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/install.dir
 C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/install/local.dir
 C:/Projects/cpp/ogl/learning/build/external/glfw/src/CMakeFiles/install/strip.dir
+C:/Projects/cpp/ogl/learning/build/external/glfw/docs/CMakeFiles/docs.dir
 C:/Projects/cpp/ogl/learning/build/external/glfw/docs/CMakeFiles/edit_cache.dir
 C:/Projects/cpp/ogl/learning/build/external/glfw/docs/CMakeFiles/rebuild_cache.dir
 C:/Projects/cpp/ogl/learning/build/external/glfw/docs/CMakeFiles/list_install_components.dir

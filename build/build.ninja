@@ -53,7 +53,7 @@ build CMakeFiles/OpenGLLearning.dir/src/main.cpp.obj: CXX_COMPILER__OpenGLLearni
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\main.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src
 
@@ -61,7 +61,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Resources/ResourceManager.cpp.obj: CXX_C
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Resources\ResourceManager.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Resources
 
@@ -69,7 +69,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/Renderer.cpp.obj: CXX_COMPILER_
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\Renderer.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -77,7 +77,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/ShaderProgram.cpp.obj: CXX_COMP
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\ShaderProgram.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -85,7 +85,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/Texture2D.cpp.obj: CXX_COMPILER
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\Texture2D.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -93,7 +93,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/Sprite.cpp.obj: CXX_COMPILER__O
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\Sprite.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -101,7 +101,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/AnimatedSprite.cpp.obj: CXX_COM
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\AnimatedSprite.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -109,7 +109,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexBuffer.cpp.obj: CXX_COMPI
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\VertexBuffer.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -117,7 +117,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/IndexBuffer.cpp.obj: CXX_COMPIL
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\IndexBuffer.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -125,7 +125,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArray.cpp.obj: CXX_COMPIL
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\VertexArray.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -133,7 +133,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Renderer/VertexArrayLayout.cpp.obj: CXX_
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Renderer\VertexArrayLayout.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Renderer
 
@@ -141,7 +141,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Game/Game.cpp.obj: CXX_COMPILER__OpenGLL
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Game\Game.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Game
 
@@ -149,7 +149,7 @@ build CMakeFiles/OpenGLLearning.dir/src/Game/Tank.cpp.obj: CXX_COMPILER__OpenGLL
   CONFIG = Debug
   DEP_FILE = CMakeFiles\OpenGLLearning.dir\src\Game\Tank.cpp.obj.d
   FLAGS = -g -std=gnu++17
-  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
+  INCLUDES = -IC:/Projects/cpp/ogl/learning/src -IC:/Projects/cpp/ogl/learning/external/glm -IC:/Projects/cpp/ogl/learning/external/rapidjson/include -IC:/Projects/cpp/ogl/learning/external/glfw/include -IC:/Projects/cpp/ogl/learning/external/glad/include
   OBJECT_DIR = CMakeFiles\OpenGLLearning.dir
   OBJECT_FILE_DIR = CMakeFiles\OpenGLLearning.dir\src\Game
 
@@ -642,6 +642,12 @@ build external/glfw/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}exter
 
 
 #############################################
+# Utility command for docs
+
+build external/glfw/docs/docs: phony external/glfw/docs/html/index.html
+
+
+#############################################
 # Utility command for edit_cache
 
 build external/glfw/docs/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
@@ -705,6 +711,15 @@ build external/glfw/docs/CMakeFiles/install/strip.util: CUSTOM_COMMAND external/
   restat = 1
 
 build external/glfw/docs/install/strip: phony external/glfw/docs/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for external\glfw\docs\html\index.html
+
+build external/glfw/docs/html/index.html | ${cmake_ninja_workdir}external/glfw/docs/html/index.html: CUSTOM_COMMAND external/glfw/docs/Doxyfile C$:/Projects/cpp/ogl/learning/external/glfw/include/GLFW/glfw3.h C$:/Projects/cpp/ogl/learning/external/glfw/include/GLFW/glfw3native.h C$:/Projects/cpp/ogl/learning/external/glfw/docs/main.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/news.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/quick.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/moving.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/compile.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/build.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/intro.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/context.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/monitor.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/window.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/input.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/vulkan.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/compat.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/internal.md C$:/Projects/cpp/ogl/learning/external/glfw/docs/DoxygenLayout.xml C$:/Projects/cpp/ogl/learning/external/glfw/docs/header.html C$:/Projects/cpp/ogl/learning/external/glfw/docs/footer.html C$:/Projects/cpp/ogl/learning/external/glfw/docs/extra.css C$:/Projects/cpp/ogl/learning/external/glfw/docs/spaces.svg
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Projects\cpp\ogl\learning\build\external\glfw\docs && "C:\Program Files\doxygen\bin\doxygen.exe""
+  DESC = Generating HTML documentation
+  restat = 1
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -818,6 +833,8 @@ build OpenGLLearning: phony bin/OpenGLLearning.exe
 
 build OpenGLLearning.exe: phony bin/OpenGLLearning.exe
 
+build docs: phony external/glfw/docs/docs
+
 build glad: phony external/glad/libglad.a
 
 build glfw: phony external/glfw/src/libglfw3.a
@@ -859,7 +876,7 @@ build external/glfw/all: phony external/glfw/src/all external/glfw/docs/all
 #############################################
 # Folder: C:/Projects/cpp/ogl/learning/build/external/glfw/docs
 
-build external/glfw/docs/all: phony
+build external/glfw/docs/all: phony external/glfw/docs/docs
 
 # =============================================================================
 
@@ -875,14 +892,14 @@ build external/glfw/src/all: phony external/glfw/src/libglfw3.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Projects/cpp/ogl/learning/build/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glfw/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glfw/src/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glfw/docs/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glad/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.1/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/WriteBasicConfigVersionFile.cmake C$:/Projects/cpp/ogl/learning/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glad/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMake/cmake_uninstall.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3.pc.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3Config.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/docs/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/src/CMakeLists.txt CMakeCache.txt CMakeFiles/4.1.0-rc2/CMakeCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeRCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeSystem.cmake
+build build.ninja C$:/Projects/cpp/ogl/learning/build/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glfw/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glfw/src/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glfw/docs/cmake_install.cmake C$:/Projects/cpp/ogl/learning/build/external/glad/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/CMake/share/cmake-4.1/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/WriteBasicConfigVersionFile.cmake C$:/Projects/cpp/ogl/learning/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glad/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMake/cmake_uninstall.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3.pc.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3Config.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/docs/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/docs/Doxyfile.in C$:/Projects/cpp/ogl/learning/external/glfw/src/CMakeLists.txt CMakeCache.txt CMakeFiles/4.1.0-rc2/CMakeCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeRCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/CMake/share/cmake-4.1/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/WriteBasicConfigVersionFile.cmake C$:/Projects/cpp/ogl/learning/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glad/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMake/cmake_uninstall.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3.pc.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3Config.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/docs/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/src/CMakeLists.txt CMakeCache.txt CMakeFiles/4.1.0-rc2/CMakeCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeRCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeSystem.cmake: phony
+build C$:/Program$ Files/CMake/share/cmake-4.1/Modules/BasicConfigVersion-SameMajorVersion.cmake.in C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeDependentOption.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakePackageConfigHelpers.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckCSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckIncludeFile.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/CheckLibraryExists.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindDoxygen.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/FindThreads.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Internal/CheckSourceCompiles.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake C$:/Program$ Files/CMake/share/cmake-4.1/Modules/WriteBasicConfigVersionFile.cmake C$:/Projects/cpp/ogl/learning/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glad/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/CMake/cmake_uninstall.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3.pc.in C$:/Projects/cpp/ogl/learning/external/glfw/CMake/glfw3Config.cmake.in C$:/Projects/cpp/ogl/learning/external/glfw/docs/CMakeLists.txt C$:/Projects/cpp/ogl/learning/external/glfw/docs/Doxyfile.in C$:/Projects/cpp/ogl/learning/external/glfw/src/CMakeLists.txt CMakeCache.txt CMakeFiles/4.1.0-rc2/CMakeCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeCXXCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeRCCompiler.cmake CMakeFiles/4.1.0-rc2/CMakeSystem.cmake: phony
 
 
 #############################################

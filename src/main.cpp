@@ -50,6 +50,7 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
+	// Linking glfw with OpenGL
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -69,6 +70,7 @@ int main(int argc, char** argv)
 		return -1;
 	}
 
+	// Connecting our callbacks to glfw window
 	glfwSetWindowSizeCallback(window, changeWindowSizeCallback);
 	glfwSetKeyCallback(window, keyHandlerCallback);
 
@@ -89,6 +91,7 @@ int main(int argc, char** argv)
 			<< Renderer::Renderer::getOpenGLVersion()
 			<< std::endl;
 
+		// Setting up the resource manager
 		ResourceManager::SetPath(argv[0]);
 
 		if (!g_game.Init())
@@ -99,6 +102,10 @@ int main(int argc, char** argv)
 		double lastLite = glfwGetTime();
 		while (!glfwWindowShouldClose(window))
 		{
+			// Input event handle
+			glfwPollEvents();
+			
+			// Getting diff time btw last and current frame
 			double currentTime = glfwGetTime();
 			float deltaTime = static_cast<float>(currentTime - lastLite);
 			lastLite = currentTime;
@@ -110,8 +117,6 @@ int main(int argc, char** argv)
 			g_game.Render();
 
 			glfwSwapBuffers(window);
-
-			glfwPollEvents();
 		}
 	}
 
