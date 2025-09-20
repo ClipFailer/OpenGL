@@ -10,28 +10,26 @@
 namespace Renderer
 {
 	AnimatedSprite::AnimatedSprite(
-		const std::string                    	&name, 
-		const std::shared_ptr<Texture2D>     	pTexture, 
-		const std::string                    	&initialSubTexture, 
-		const std::shared_ptr<ShaderProgram> 	pShaderProgram, 
-		const glm::vec2                      	&position, 
-		const glm::vec2                      	&size, 
-		float                          		 	rotation
+		const std::string&						name,
+		const std::shared_ptr<Texture2D> 		pTexture,
+		const std::string&						initialSubTexture,
+		const std::shared_ptr<ShaderProgram> 	pShaderProgram
 	) 
 		: Sprite(
 			name, 
 			std::move(pTexture), 
 			initialSubTexture, 
-			std::move(pShaderProgram),
-			position,
-			size,
-			rotation
+			std::move(pShaderProgram)
 		)
 	{
 		m_pCurrentAnimationState = m_states.end();
 	}
 
-	void AnimatedSprite::Render() const
+	void AnimatedSprite::render(
+		const glm::vec2& 	position,
+		const glm::vec2& 	size,
+		const float 		rotation
+	) const
 	{
 		if (m_redrawSubTexture)
 		{
@@ -53,7 +51,7 @@ namespace Renderer
 			m_redrawSubTexture = false;
 		}
 
-		Sprite::Render();
+		Sprite::render(position, size, rotation);
 	}
     
 	void AnimatedSprite::InsertState(

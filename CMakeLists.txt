@@ -21,7 +21,10 @@ add_executable(${PROJECT_NAME}
 	src/Tools/Tools.h
 
 	src/Game/Game.cpp
-	src/Game/Tank.cpp
+	src/Game/GameObjects/Tank.cpp
+	src/Game/GameObjects/IGameObject.cpp
+	src/Game/GameObjects/Level.cpp
+	src/Game/GameObjects/BrickWall.cpp
 
 )
 

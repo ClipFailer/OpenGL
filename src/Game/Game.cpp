@@ -15,11 +15,12 @@
 
 #include <GLFW/glfw3.h>
 
-#include "Game/Tank.h"
+#include "GameObjects/Tank.h"
+#include "GameObjects/Level.h"
 
 
 Game::Game(const glm::ivec2& windowSize) 
-	: m_eGameState(Game::EGameState::Active)
+	: m_eGameState(EGameState::Active)
 	, m_windowSize(windowSize)
 {
 	m_keys.fill(false);
@@ -31,18 +32,18 @@ Game::~Game()
 }
 
 void Game::Render(){
-	// ResourceManager::GetAnimatedSprite("defaultAnimatedSprite")->Render();
+	if (m_pLevel) {
+		m_pLevel->render();
+	}
+
 	if (m_pTank) {
-		m_pTank->Render();
+		m_pTank->render();
 	}
 }
 
 void Game::Update(const float deltaTime){
-	// ResourceManager::GetAnimatedSprite("defaultAnimatedSprite")
-	// 	->Update(deltaTime);
-
 	if (m_pTank) {
-		m_pTank->Update(deltaTime);			
+		m_pTank->update(deltaTime);			
 		if (m_keys[GLFW_KEY_W] || m_keys[GLFW_KEY_UP]){
 			m_pTank->SetOrientation(Tank::EOrientation::Top);
             m_pTank->Move(true);
@@ -59,6 +60,9 @@ void Game::Update(const float deltaTime){
             m_pTank->Move(false);
         }
 	}
+
+	if (m_pLevel)
+		m_pLevel->update(deltaTime);
 }
 
 void Game::SetKey(const int key, const int action){
@@ -68,22 +72,30 @@ void Game::SetKey(const int key, const int action){
 bool Game::Init(){
 	ResourceManager::loadJsonResources("res/resources.json");
 
-	auto pSpriteShaderProgram = ResourceManager::GetShaderProgram("spriteShader");
+	auto pSpriteShaderProgram = ResourceManager::getShaderProgram("spriteShader");
 	if (!pSpriteShaderProgram)
 		throw std::runtime_error("Failed to load shader program");
 
-	auto pMapTextureAtlas = ResourceManager::GetTexture("mapTextureAtlas");
+	auto pMapTextureAtlas = ResourceManager::getTexture("mapTextureAtlas");
 	if (!pMapTextureAtlas)
 		throw std::runtime_error("Failed to load map texture atlas");
 
-	auto pTanksTextureAtlas = ResourceManager::GetTexture("tanksTextureAtlas");
+	auto pTanksTextureAtlas = ResourceManager::getTexture("tanksTextureAtlas");
 	if (!pTanksTextureAtlas)
 		throw std::runtime_error("Failed to load tanks texture atlas");
 
-	auto pTanksAnimatedSprite = ResourceManager::GetAnimatedSprite("tanksAnimatedSprite");
+	auto pTanksAnimatedSprite = ResourceManager::getAnimatedSprite("tanksAnimatedSprite");
 
 	m_pTank = std::make_unique<Tank>(
-		pTanksAnimatedSprite, 100.f, glm::vec2(300.f, 150.f)
+		pTanksAnimatedSprite,
+		100.f,
+		glm::vec2(100.f, 100.f),
+		glm::vec2(16.f, 16.f)
+	);
+
+	m_pLevel = std::make_unique<Level>(
+		ResourceManager::getLevels()[0],
+		16
 	);
 
 	glm::mat4 projectionMatrix = glm::ortho(

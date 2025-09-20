@@ -23,8 +23,9 @@ TexturesMap ResourceManager::m_textures;
 SpritesMap ResourceManager::m_sprites;
 AnimatedSpritesMap ResourceManager::m_animatedSprites;
 std::string ResourceManager::m_path;
+LevelVector ResourceManager::m_levels;
 
-void ResourceManager::SetPath(const std::string &resourcePath) {
+void ResourceManager::setPath(const std::string &resourcePath) {
 	size_t found = resourcePath.find_last_of("/\\");
 	m_path = resourcePath.substr(0, found);
 }
@@ -36,19 +37,19 @@ void ResourceManager::UnloadAllResources() {
 	m_textures.clear();
 }
 
-ShaderPtr ResourceManager::LoadShaders(
+ShaderPtr ResourceManager::loadShaders(
 	const std::string& shaderName, 
 	const std::string& vertexPath, 
 	const std::string& fragmentPath
 ) {
-    std::string vertexString = GetFileString(vertexPath);	
+    std::string vertexString = getFileString(vertexPath);	
 	if (vertexString.empty())
 	{
 		std::cerr << "Failed to load vertex shader!\n";
 		return nullptr;
 	}
 
-    std::string fragmentString = GetFileString(fragmentPath);
+    std::string fragmentString = getFileString(fragmentPath);
 	if (fragmentString.empty())
 	{
 		std::cerr << "Failed to load fragment shader!\n";
@@ -75,7 +76,7 @@ ShaderPtr ResourceManager::LoadShaders(
 	return nullptr;
 }
 
-ShaderPtr ResourceManager::GetShaderProgram(const std::string &shaderName) {
+ShaderPtr ResourceManager::getShaderProgram(const std::string &shaderName) {
     ShaderProgramsMap::const_iterator it = m_shaderPrograms.find(shaderName);
 
 	if (it != m_shaderPrograms.end())
@@ -87,7 +88,7 @@ ShaderPtr ResourceManager::GetShaderProgram(const std::string &shaderName) {
 	return nullptr;
 }
 
-TexturePtr ResourceManager::LoadTexture(
+TexturePtr ResourceManager::loadTexture(
 	const std::string& textureName,
 	const std::string& texturePath
 ) {
@@ -122,7 +123,7 @@ TexturePtr ResourceManager::LoadTexture(
 	return newTexture;
 }
 
-TexturePtr ResourceManager::GetTexture(const std::string &textureName) {
+TexturePtr ResourceManager::getTexture(const std::string &textureName) {
     TexturesMap::const_iterator it = m_textures.find(textureName);
 	if (it != m_textures.end())
 	{
@@ -133,19 +134,17 @@ TexturePtr ResourceManager::GetTexture(const std::string &textureName) {
 	return nullptr;
 }
 
-SpritePtr ResourceManager::LoadSprite(
-	const std::string &spriteName, 
-	const std::string &textureName, 
-	const std::string &shaderName, 
-	const unsigned int spriteWidth, 
-	const unsigned int spriteHeight,
+SpritePtr ResourceManager::loadSprite(
+	const std::string& spriteName, 
+	const std::string& textureName, 
+	const std::string& shaderName, 
 	const std::string& initialSubTexureName
 ) {
-    auto pTexture = GetTexture(textureName);
+    auto pTexture = getTexture(textureName);
 	if (!pTexture)
 		return nullptr;
 
-	auto pShader = GetShaderProgram(shaderName);
+	auto pShader = getShaderProgram(shaderName);
 	if (!pShader)
 		return nullptr;
 
@@ -155,16 +154,14 @@ SpritePtr ResourceManager::LoadSprite(
 			spriteName,
 			pTexture, 
 			initialSubTexureName,
-			pShader, 
-			glm::vec2(0.f, 0.f),
-			glm::vec2(spriteWidth, spriteHeight)
+			pShader
 		)
 	).first->second;
 
 	return newSprite;
 }
 
-SpritePtr ResourceManager::GetSprite(const std::string &spriteName) {
+SpritePtr ResourceManager::getSprite(const std::string &spriteName) {
     auto it = m_sprites.find(spriteName);
 	if (it != m_sprites.end())
 		return it->second;
@@ -173,21 +170,19 @@ SpritePtr ResourceManager::GetSprite(const std::string &spriteName) {
 	return nullptr;
 }
 
-AnimatedSpritePtr ResourceManager::LoadAnimatedSprite(
+AnimatedSpritePtr ResourceManager::loadAnimatedSprite(
 	const std::string&	spriteName, 
 	const std::string&	textureName, 
 	const std::string&	shaderName, 
-	const unsigned int 	spriteWidth, 
-	const unsigned int 	spriteHeight,
 	const std::string&	initialSubTexureName
 ) {
-    auto texture = GetTexture(textureName);
+    auto texture = getTexture(textureName);
 	if (!texture) {
 		std::cerr << "Can't find texture: " << textureName << std::endl;
 		return nullptr;
 	}
 
-	auto shader = GetShaderProgram(shaderName);
+	auto shader = getShaderProgram(shaderName);
 	if (!shader) {
 		std::cerr << "Can't find shader: " << shaderName << std::endl;
 		return nullptr;
@@ -199,16 +194,14 @@ AnimatedSpritePtr ResourceManager::LoadAnimatedSprite(
 			spriteName,
 			texture,
 			initialSubTexureName,
-			shader,
-			glm::vec2(0.f, 0.f),
-			glm::vec2(spriteWidth, spriteHeight)
+			shader
 		)
 	).first->second;
 
 	return newAnimatedSprite;
 }
 
-AnimatedSpritePtr ResourceManager::GetAnimatedSprite(
+AnimatedSpritePtr ResourceManager::getAnimatedSprite(
 	const std::string &spriteName
 ) {
     auto it = m_animatedSprites.find(spriteName);
@@ -219,14 +212,14 @@ AnimatedSpritePtr ResourceManager::GetAnimatedSprite(
 	std::cerr << "Can't find sprite: " << spriteName << std::endl;
 	return nullptr;
 }
-TexturePtr ResourceManager::LoadTextureAtlas(
+TexturePtr ResourceManager::loadTextureAtlas(
 	const std::string& 				textureName, 
 	const std::string& 				texturePath, 
 	const std::vector<std::string> 	subTextures,
 	const unsigned int 				subTextureWidth,
 	const unsigned int 				subTextureHeight
 ) {
-    auto pTexture = LoadTexture(textureName, texturePath);
+    auto pTexture = loadTexture(textureName, texturePath);
 
 	if (pTexture) {
 		const unsigned int textureWidth = pTexture->GetWidth();
@@ -254,7 +247,7 @@ TexturePtr ResourceManager::LoadTextureAtlas(
 }
 
 bool ResourceManager::loadJsonResources(const std::string &filePath) {
-    const std::string jsonString = GetFileString(filePath);
+    const std::string jsonString = getFileString(filePath);
 
 	if (jsonString.empty()) {
 		std::cerr << "Can't find json file" << std::endl;
@@ -276,7 +269,7 @@ bool ResourceManager::loadJsonResources(const std::string &filePath) {
 			const std::string name = currentShader["name"].GetString();
 			const std::string filePathV = currentShader["filePath_v"].GetString();
 			const std::string filePathF = currentShader["filePath_f"].GetString();
-			LoadShaders(name, filePathV, filePathF);
+			loadShaders(name, filePathV, filePathF);
 		}
 	}
 
@@ -295,7 +288,7 @@ bool ResourceManager::loadJsonResources(const std::string &filePath) {
 				subTextures.emplace_back(currentSubTexture.GetString());
 			}
 
-			LoadTextureAtlas(
+			loadTextureAtlas(
 				name,
 				filePath,
 				std::move(subTextures),
@@ -311,16 +304,12 @@ bool ResourceManager::loadJsonResources(const std::string &filePath) {
 			const std::string name = currentAnimatedSprite["name"].GetString();
 			const std::string textureAtlas = currentAnimatedSprite["textureAtlas"].GetString();
 			const std::string shaderProgram = currentAnimatedSprite["shaderProgram"].GetString();
-			const unsigned int initialWidth = currentAnimatedSprite["initialWidth"].GetUint();
-			const unsigned int initialHeight = currentAnimatedSprite["initialHeight"].GetUint();
 			const std::string initialTexture = currentAnimatedSprite["initialTexture"].GetString();
 
-			auto pAnimatedSprite = LoadAnimatedSprite(
+			auto pAnimatedSprite = loadAnimatedSprite(
 				name,
 				textureAtlas,
 				shaderProgram,
-				initialWidth,
-				initialHeight,
 				initialTexture
 			);
 			if (!pAnimatedSprite) {
@@ -346,11 +335,54 @@ bool ResourceManager::loadJsonResources(const std::string &filePath) {
 		}
 	}
 
+	auto spritesIt = document.FindMember("sprites");
+	if (spritesIt != document.MemberEnd()) {
+		for (const auto& currentSprite : spritesIt->value.GetArray()) {
+			const std::string name = currentSprite["name"].GetString();
+			const std::string textureAtlas = currentSprite["textureAtlas"].GetString();
+			const std::string shader = currentSprite["shader"].GetString();
+			const std::string subTexture = currentSprite["subTextureName"].GetString();
+
+			auto pSprite = loadSprite(
+				name,
+				textureAtlas,
+				shader,
+				subTexture
+			);
+			if (!pSprite) {
+				std::cerr << "Failed to load sprite: " << name << std::endl;
+				continue;
+			}
+		}
+	}
+
+	auto levelsIt = document.FindMember("levels");
+	if (levelsIt != document.MemberEnd()) {
+		for (const auto& currentLevel : levelsIt->value.GetArray()) {
+			const auto description = currentLevel["description"].GetArray();
+			std::vector<std::string> levelRows;
+			size_t maxRowLength = 0;
+			levelRows.reserve(description.Size());
+			for (const auto& currentRow : description) {
+				levelRows.emplace_back(currentRow.GetString());
+				if (maxRowLength < levelRows.back().length())
+					maxRowLength = levelRows.back().length();
+			}
+
+			for (auto& currentRow : levelRows) {
+				while (currentRow.length() < maxRowLength) {
+					currentRow.append("D");
+				}
+			}
+
+			m_levels.emplace_back(std::move(levelRows));
+		}
+	}
+
 	return true;
-	
 }
 
-std::string ResourceManager::GetFileString(const std::string &relativeFilePath){
+std::string ResourceManager::getFileString(const std::string &relativeFilePath){
 	std::fstream file;
 	file.open(m_path + "/" + relativeFilePath, std::ios::in | std::ios::binary);
 

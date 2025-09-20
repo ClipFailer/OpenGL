@@ -21,10 +21,11 @@ using ShaderProgramsMap = std::map<std::string, std::shared_ptr<Renderer::Shader
 using TexturesMap = std::map<std::string, std::shared_ptr<Renderer::Texture2D>>;
 using SpritesMap = std::map<std::string, std::shared_ptr<Renderer::Sprite>>;
 using AnimatedSpritesMap = std::map<std::string, std::shared_ptr<Renderer::AnimatedSprite>>;
+using LevelVector = std::vector<std::vector<std::string>>;
 
 class ResourceManager {
 public:
-	static void SetPath(const std::string& resourcePath);
+	static void setPath(const std::string& resourcePath);
 	static void UnloadAllResources();
 
 	ResourceManager() 									= delete;
@@ -34,40 +35,36 @@ public:
 	ResourceManager& operator=(const ResourceManager&) 	= delete;
 	ResourceManager(ResourceManager&&) 					= delete;
 
-	static ShaderPtr LoadShaders(
+	static ShaderPtr loadShaders(
 		const std::string& 	shaderName, 
 		const std::string& 	vertexPath, 
 		const std::string& 	fragmentPath
 	); 
-	static ShaderPtr GetShaderProgram(const std::string& shaderName);
+	static ShaderPtr getShaderProgram(const std::string& shaderName);
 
-	static TexturePtr LoadTexture(
+	static TexturePtr loadTexture(
 		const std::string& textureName, 
 		const std::string& texturePath
 	);
-	static TexturePtr GetTexture(const std::string& textureName);
+	static TexturePtr getTexture(const std::string& textureName);
 
-	static SpritePtr LoadSprite(
+	static SpritePtr loadSprite(
 		const std::string& spriteName,
 		const std::string& textureName,
 		const std::string& shaderName,
-		const unsigned int spriteWidth,
-		const unsigned int spriteHeight,
 		const std::string& initialSubTexureName = "defaultSubTexture"
 	);
-	static SpritePtr GetSprite(const std::string &spriteName);
+	static SpritePtr getSprite(const std::string &spriteName);
 
-	static AnimatedSpritePtr LoadAnimatedSprite(
+	static AnimatedSpritePtr loadAnimatedSprite(
 		const std::string& spriteName,
 		const std::string& textureName,
 		const std::string& shaderName,
-		const unsigned int spriteWidth,
-		const unsigned int spriteHeight,
 		const std::string& initialSubTexureName = "defaultSubTexture"
 	);
-	static AnimatedSpritePtr GetAnimatedSprite(const std::string &spriteName);
+	static AnimatedSpritePtr getAnimatedSprite(const std::string &spriteName);
 
-	static TexturePtr LoadTextureAtlas(
+	static TexturePtr loadTextureAtlas(
 		const std::string 					&textureName,
 		const std::string 					&texturePath,
 		const std::vector<std::string> 		subTextures,
@@ -75,14 +72,18 @@ public:
 		const unsigned int 					subTextureHeight
 	);
 
+	static const LevelVector& getLevels() noexcept { return m_levels; };
+
 	static bool loadJsonResources(const std::string& filePath);
 		
 private:
-	static std::string GetFileString(const std::string& filePath);
+	static std::string getFileString(const std::string& filePath);
 
+	static std::string 			m_path;
+
+	static LevelVector 			m_levels;
 	static ShaderProgramsMap 	m_shaderPrograms;
 	static TexturesMap 			m_textures;
 	static SpritesMap 			m_sprites;
 	static AnimatedSpritesMap 	m_animatedSprites;
-	static std::string 			m_path;
 };

@@ -12,9 +12,9 @@
 #include "Tools/Tools.h"
 #include "Resources/ResourceManager.h"
 
-glm::ivec2 g_windowSize(800, 600);
+glm::ivec2 g_windowSize(13 * 16, 14 * 16);
 
-Game g_game(g_windowSize);
+std::unique_ptr<Game> g_game = std::make_unique<Game>(g_windowSize);
 
 void changeWindowSizeCallback(
 	GLFWwindow 	*window, 
@@ -39,7 +39,7 @@ void keyHandlerCallback(
 		glfwSetWindowShouldClose(window, GLFW_TRUE);
 	}
 
-	g_game.SetKey(key, action);
+	g_game->SetKey(key, action);
 }
 
 int main(int argc, char** argv)
@@ -92,9 +92,9 @@ int main(int argc, char** argv)
 			<< std::endl;
 
 		// Setting up the resource manager
-		ResourceManager::SetPath(argv[0]);
+		ResourceManager::setPath(argv[0]);
 
-		if (!g_game.Init())
+		if (!g_game->Init())
 			throw std::runtime_error("Failed to inizialize game");
 
 		Renderer::Renderer::setClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -110,14 +110,16 @@ int main(int argc, char** argv)
 			float deltaTime = static_cast<float>(currentTime - lastLite);
 			lastLite = currentTime;
 
-			g_game.Update(deltaTime);
+			g_game->Update(deltaTime);
 
 			Renderer::Renderer::clear();
 
-			g_game.Render();
+			g_game->Render();
 
 			glfwSwapBuffers(window);
 		}
+		g_game = nullptr;
+		ResourceManager::UnloadAllResources();
 	}
 
 	glfwTerminate();
