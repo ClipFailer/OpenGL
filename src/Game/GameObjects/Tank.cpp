@@ -1,24 +1,72 @@
 #include "Tank.h"
 
-#include "Renderer/AnimatedSprite.h"
+#include "Renderer/Sprite.h"
 
-Tank::Tank(std::shared_ptr<Renderer::AnimatedSprite> 	pSprite, 
-		   const float 									velocity, 
-		   const glm::vec2&								position,
-		   const glm::vec2&								size,
-		   const float									rotation
-		) 
-		   	: IGameObject(position, size, rotation)
-			, m_pSprite(pSprite)
-			, m_velocity(velocity)
-			, m_eOrientation(EOrientation::Top)
-			, m_isMoving(false)
-			, m_moveVector(glm::vec2(0.f, 1.f)) 
+Tank::Tank(
+	std::shared_ptr<Renderer::Sprite>&& 		pSpriteTop,
+	std::shared_ptr<Renderer::Sprite>&& 		pSpriteBottom,
+	std::shared_ptr<Renderer::Sprite>&& 		pSpriteLeft,
+	std::shared_ptr<Renderer::Sprite>&& 		pSpriteRight,
+	const float 								velocity,
+	const glm::vec2& 							position,
+	const glm::vec2& 							size,
+	const float									rotation
+) 
+	: IGameObject(position, size, rotation)
+	, m_pSpriteTop(std::move(pSpriteTop))
+	, m_pSpriteBottom(std::move(pSpriteBottom))
+	, m_pSpriteLeft(std::move(pSpriteLeft))
+	, m_pSpriteRight(std::move(pSpriteRight))
+	, m_spriteAnimatorTop(m_pSpriteTop)
+	, m_spriteAnimatorBottom(m_pSpriteBottom)
+	, m_spriteAnimatorLeft(m_pSpriteLeft)
+	, m_spriteAnimatorRight(m_pSpriteRight)
+	, m_velocity(velocity)
+	, m_eOrientation(EOrientation::Top)
+	, m_isMoving(false)
+	, m_moveVector(glm::vec2(0.f, 1.f)) 
 {
 }
 
 void Tank::render() const {
-	m_pSprite->render(m_position, m_size, m_rotation);
+	switch (m_eOrientation)
+	{
+	case EOrientation::Top:
+		m_pSpriteTop->render(
+			m_position, 
+			m_size, 
+			m_rotation, 
+			m_spriteAnimatorTop.getCurrentFrame()
+		);
+		break;
+	case EOrientation::Bottom:
+		m_pSpriteBottom->render(
+			m_position, 
+			m_size, 
+			m_rotation, 
+			m_spriteAnimatorBottom.getCurrentFrame()
+		);
+		break;
+	case EOrientation::Left:
+		m_pSpriteLeft->render(
+			m_position, 
+			m_size, 
+			m_rotation, 
+			m_spriteAnimatorLeft.getCurrentFrame()
+		);
+		break;
+	case EOrientation::Right:
+		m_pSpriteRight->render(
+			m_position, 
+			m_size, 
+			m_rotation, 
+			m_spriteAnimatorRight.getCurrentFrame()
+		);
+		break;
+	
+	default:
+		break;
+	}
 }
 
 void Tank::SetOrientation(const EOrientation orientetion) {
@@ -30,22 +78,18 @@ void Tank::SetOrientation(const EOrientation orientetion) {
 	switch (m_eOrientation)
 	{
 	case EOrientation::Top:
-		m_pSprite->SetState("tankTopState");
 		m_moveVector.x = 0.f;
 		m_moveVector.y = 1.f;
 		break;
 	case EOrientation::Bottom:
-		m_pSprite->SetState("tankBottomState");
 		m_moveVector.x = 0.f;
 		m_moveVector.y = -1.f;
 		break;
 	case EOrientation::Left:
-		m_pSprite->SetState("tankLeftState");
 		m_moveVector.x = -1.f;
 		m_moveVector.y = 0.f;
 		break;
 	case EOrientation::Right:
-		m_pSprite->SetState("tankRightState");
 		m_moveVector.x = 1.f;
 		m_moveVector.y = 0.f;
 		break;
@@ -63,6 +107,25 @@ void Tank::update(const float deltaTime) {
 	if(m_isMoving)
 	{
 		m_position += deltaTime * m_velocity * m_moveVector;
-		m_pSprite->Update(deltaTime);
+
+		switch (m_eOrientation)
+		{
+		case EOrientation::Top:
+			m_spriteAnimatorTop.update(deltaTime);
+			break;
+		case EOrientation::Bottom:
+			m_spriteAnimatorBottom.update(deltaTime);
+			break;
+		case EOrientation::Left:
+			m_spriteAnimatorLeft.update(deltaTime);
+			break;
+		case EOrientation::Right:
+			m_spriteAnimatorRight.update(deltaTime);
+			break;
+		
+		default:
+			break;
+		}
+
 	}
 }

@@ -11,7 +11,6 @@
 #include "Renderer/ShaderProgram.h"
 #include "Renderer/Texture2D.h"
 #include "Renderer/Sprite.h"
-#include "Renderer/AnimatedSprite.h"
 
 #include <GLFW/glfw3.h>
 
@@ -85,11 +84,12 @@ bool Game::Init(){
 	if (!pTanksTextureAtlas)
 		throw std::runtime_error("Failed to load tanks texture atlas");
 
-	auto pTanksAnimatedSprite = ResourceManager::getAnimatedSprite("tanksAnimatedSprite");
-
 	m_pTank = std::make_unique<Tank>(
-		pTanksAnimatedSprite,
-		100.f,
+		std::move(ResourceManager::getSprite("tankSpriteTop")),
+		std::move(ResourceManager::getSprite("tankSpriteBottom")),
+		std::move(ResourceManager::getSprite("tankSpriteLeft")),
+		std::move(ResourceManager::getSprite("tankSpriteRight")),
+		50.f,
 		glm::vec2(100.f, 100.f),
 		glm::vec2(16.f, 16.f)
 	);

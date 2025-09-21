@@ -83,9 +83,28 @@ namespace Renderer {
     void Sprite::render(
 		const glm::vec2& 	position,
 		const glm::vec2& 	size,
-		const float 		rotation
+		const float 		rotation,
+		const size_t		frameId
 	) const
 	{
+		if (frameId != m_lastFrameId) {
+			const FrameDescription& currentFrameDescription = m_frameDescriptions[frameId];
+
+			std::vector<GLfloat> textureCoords {
+				currentFrameDescription.leftBottomUV.x, 	currentFrameDescription.leftBottomUV.y,
+				currentFrameDescription.leftBottomUV.x, 	currentFrameDescription.rightTopUV.y,
+				currentFrameDescription.rightTopUV.x,   	currentFrameDescription.rightTopUV.y,
+				currentFrameDescription.rightTopUV.x,   	currentFrameDescription.leftBottomUV.y,
+			};
+
+			m_textureVBO.update(
+				textureCoords.data(), 
+				textureCoords.size() * sizeof(GLfloat)
+			);
+
+			m_lastFrameId = frameId;
+		}
+
 		m_pShaderProgram->Use();	
 		
 		glm::mat4 model(1.f);
@@ -120,4 +139,18 @@ namespace Renderer {
 
 		Renderer::Draw(m_VAO, m_IBO, *m_pShaderProgram);
     }
+
+    void Sprite::insertFrames(std::vector<FrameDescription>&& framesDescriptions) noexcept {
+		m_frameDescriptions = std::move(framesDescriptions);
+    }
+
+    float Sprite::getFrameTime(const size_t frameId) const noexcept {
+        return m_frameDescriptions[frameId].duration;
+    }
+
+    size_t Sprite::getFramesCount() const noexcept {
+        return m_frameDescriptions.size();
+    }
+
+    
 } // namespace Renderer

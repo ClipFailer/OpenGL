@@ -12,11 +12,11 @@ add_executable(${PROJECT_NAME}
 	src/Renderer/ShaderProgram.cpp
 	src/Renderer/Texture2D.cpp
 	src/Renderer/Sprite.cpp
-	src/Renderer/AnimatedSprite.cpp
 	src/Renderer/VertexBuffer.cpp
 	src/Renderer/IndexBuffer.cpp
 	src/Renderer/VertexArray.cpp
 	src/Renderer/VertexArrayLayout.cpp
+	src/Renderer/SpriteAnimator.cpp
 
 	src/Tools/Tools.h
 

@@ -56,14 +56,6 @@ public:
 	);
 	static SpritePtr getSprite(const std::string &spriteName);
 
-	static AnimatedSpritePtr loadAnimatedSprite(
-		const std::string& spriteName,
-		const std::string& textureName,
-		const std::string& shaderName,
-		const std::string& initialSubTexureName = "defaultSubTexture"
-	);
-	static AnimatedSpritePtr getAnimatedSprite(const std::string &spriteName);
-
 	static TexturePtr loadTextureAtlas(
 		const std::string 					&textureName,
 		const std::string 					&texturePath,
@@ -85,5 +77,4 @@ private:
 	static ShaderProgramsMap 	m_shaderPrograms;
 	static TexturesMap 			m_textures;
 	static SpritesMap 			m_sprites;
-	static AnimatedSpritesMap 	m_animatedSprites;
 };
