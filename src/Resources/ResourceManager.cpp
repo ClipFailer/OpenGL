@@ -228,10 +228,14 @@ TexturePtr ResourceManager::loadTextureAtlas(
 		unsigned int currentTextureOffsetY = textureHeight;
 
 		for (const auto &currentSubTextureName : subTextures) {
-			glm::vec2 leftBottonUV(static_cast<float>(currentTextureOffsetX) / textureWidth,
-								   static_cast<float>(currentTextureOffsetY - subTextureHeight) / textureHeight);
-			glm::vec2 rightTopUV(static_cast<float>(currentTextureOffsetX + subTextureWidth) / textureWidth,
-								 static_cast<float>(currentTextureOffsetY) / textureHeight);
+			glm::vec2 leftBottonUV(
+				static_cast<float>(currentTextureOffsetX + 0.01f) / textureWidth,
+				static_cast<float>(currentTextureOffsetY - subTextureHeight + 0.01f) / textureHeight
+			);
+			glm::vec2 rightTopUV(
+				static_cast<float>(currentTextureOffsetX + subTextureWidth - 0.01f) / textureWidth,
+				static_cast<float>(currentTextureOffsetY - 0.01f) / textureHeight
+			);
 
 			pTexture->AddSubTexture(std::move(currentSubTextureName), leftBottonUV, rightTopUV);
 

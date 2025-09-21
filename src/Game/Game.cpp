@@ -32,13 +32,14 @@ Game::~Game()
 }
 
 void Game::Render(){
+	if (m_pTank) {
+		m_pTank->render();
+	}
+	
 	if (m_pLevel) {
 		m_pLevel->render();
 	}
 
-	if (m_pTank) {
-		m_pTank->render();
-	}
 }
 
 void Game::Update(const float deltaTime){

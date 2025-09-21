@@ -23,7 +23,28 @@ void changeWindowSizeCallback(
 ) {
 	g_windowSize.x = width;
 	g_windowSize.y = height;
-	Renderer::Renderer::setViewport(g_windowSize.x, g_windowSize.y);
+
+	const float mapAspectRatio = 13.f / 14.f;
+	unsigned int viewPortWidth = g_windowSize.x;
+	unsigned int viewPortHeight = g_windowSize.y;
+	unsigned int viewPortLeftOffset = 0;
+	unsigned int viewPortBottomOffset = 0;
+
+	if (g_windowSize.x / g_windowSize.y > mapAspectRatio) {
+		viewPortWidth = static_cast<unsigned int>(g_windowSize.y * mapAspectRatio);
+		viewPortLeftOffset = (g_windowSize.x - viewPortWidth) / 2;
+	} else {
+		viewPortHeight = static_cast<unsigned int>(g_windowSize.x / mapAspectRatio);
+		viewPortBottomOffset = (g_windowSize.y - viewPortHeight) / 2;
+	}
+
+
+	Renderer::Renderer::setViewport(
+		viewPortWidth, 
+		viewPortHeight, 
+		viewPortLeftOffset, 
+		viewPortBottomOffset
+	);
 }
 
 void keyHandlerCallback(
